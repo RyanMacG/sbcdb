@@ -2,27 +2,17 @@ require 'spec_helper'
 
 describe "StaticPages" do
 
-  describe "Home Page" do
-    it "should have the content 'Subcontractor'" do
-      visit '/static_pages/home'
-      page.should have_content('Subcontractor')
-    end
+  subject { page }
 
-    it "should have the title 'Home'" do
-      visit '/static_pages/home'
-      page.should have_selector('title', text: 'SbcDB | Home')
-    end
+  describe "Home Page" do
+    before { visit root_path }
+    it { should have_selector('h1', text: 'Home') }
+    it { should have_selector('title', text: full_title('Home')) }
   end
 
   describe "Help page" do
-    it "should have the content 'Help'" do
-      visit '/static_pages/help'
-      page.should have_content('help')
-    end
-
-    it "should have the title 'Help" do
-      visit '/static_pages/help'
-      page.should have_selector('title', text: 'SbcDB | Help')
-    end
+    before { visit help_path }
+    it { should have_selector('h1', text: 'Help') }
+    it { should have_selector('title', text: full_title('Help')) }
   end
 end
