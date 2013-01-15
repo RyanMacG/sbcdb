@@ -1,4 +1,6 @@
 Sbcdb::Application.routes.draw do
+  get "subcontractors/new"
+
   root to: 'static_pages#home'
 
   match 'help', to: 'static_pages#help'
