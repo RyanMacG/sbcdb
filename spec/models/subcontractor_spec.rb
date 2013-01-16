@@ -7,16 +7,6 @@ describe Subcontractor do
 
   subject { @sbcon }
 
-  it { should respond_to(:sbcon_name) }
-  it { should respond_to(:address1) }
-  it { should respond_to(:address2) }
-  it { should respond_to(:city) }
-  it { should respond_to(:county) }
-  it { should respond_to(:postcode) }
-  it { should respond_to(:country) }
-  it { should respond_to(:con_name) }
-  it { should respond_to(:con_email) }
-  it { should respond_to(:utr_no) }
 end
 # == Schema Information
 #
