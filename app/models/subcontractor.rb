@@ -1,5 +1,12 @@
 class Subcontractor < ActiveRecord::Base
-  attr_accessible :acpt_tc, :address1, :address2, :amnt_con_all, :amnt_emp, :amnt_prod, :amnt_pub, :approved_status, :cis_stat, :cis_ver_no, :city, :comments, :con_email, :con_name, :con_tel_num, :country, :cr_ni_no, :cscs_card, :exp_date_con_all, :exp_date_emp, :hr_rate_other, :hs_pol, :initials, :ins_con_all, :ins_emp, :ins_prod, :ins_pub, :jtc_comm, :ldn, :meth_state, :mid, :ne_eng, :nw_eng, :op_avail, :position, :postcode, :prov_emp, :prov_pub, :ref_con_all, :ref_emp, :ref_prod, :ref_pub, :renewal_date, :sbcon_name, :sbcon_type, :scot, :se_eng, :signed, :signed_date, :sw_eng, :vat_no, :vat_reg
+  attr_accessible :acpt_tc, :address1, :address2, :amnt_con_all, :amnt_emp, :amnt_prod,
+  :amnt_pub, :approved_status, :cis_stat, :cis_ver_no, :city, :comments, :con_email, :con_name,
+  :con_tel_num, :country, :cr_ni_no, :cscs_card, :date_entered, :exp_date_con_all,
+  :exp_date_emp, :exp_date_pub, :hr_rate_fitter, :hr_rate_other, :hs_pol, :initials,
+  :ins_con_all, :ins_emp, :ins_prod, :ins_pub, :jtc_comm, :ldn, :meth_state, :mid, :ne_eng,
+  :nw_eng, :op_avail, :position, :postcode, :prov_emp, :prov_pub, :rating, :ref_con_all,
+  :ref_emp, :ref_prod, :ref_pub, :renewal_date, :risk_ass, :sbcon_name,
+  :sbcon_type, :scot, :se_eng, :signed, :signed_date, :sw_eng, :utr_no, :vat_no, :vat_reg
 
   validates_presence_of :sbcon_name, :con_email, :address1, :city, :postcode,
   :country, :con_name, :con_tel_num, :vat_reg, :utr_no, :cr_ni_no, :cscs_card,
@@ -7,6 +14,12 @@ class Subcontractor < ActiveRecord::Base
   :ins_con_all, :acpt_tc, :hs_pol, :meth_state, :risk_ass, :signed, :signed_date,
   :position, :date_entered, :initials, :renewal_date, :approved_status, :sbcon_type,
   :rating, :cis_ver_no, :cis_stat
+
+  validates :sbcon_name, length: { maximum: 50 }
+  validates :con_name, length: { maximum: 50 }
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :con_email, format: { with: VALID_EMAIL_REGEX }
 end
 # == Schema Information
 #
