@@ -6,7 +6,7 @@ describe Subcontractor do
    con_email: "con@example.com", address1: "1 Example Street", city: "Dundee",
    postcode: "DD2 3SN", country: "UK", con_name: "Doris", con_tel_num: "01382427400",
    vat_reg: "no", utr_no: "1234567890", cr_ni_no: "BB XX 33 42", cscs_card: "yes",
-   op_avail: "4", hr_rate_fitter: "6.5", hr_rate_other: "0", ins_prod: "no", ins_emp: "no",
+   op_avail: "4", hr_rate_fitter: "6.52", hr_rate_other: "0", ins_prod: "no", ins_emp: "no",
    ins_pub: "yes", prov_pub: "Axa", amnt_pub: "50000", ref_pub: "A3002",
    exp_date_pub: "16/01/2015", ins_con_all: "no", acpt_tc: "yes", hs_pol: "use JTC's",
    meth_state: "yes", risk_ass: "no", signed: "Jimmy Blogs", signed_date: "13/01/2013",
@@ -55,6 +55,43 @@ describe Subcontractor do
         end
       end
     end
+  end
+
+  describe "phone numbers" do
+    describe "when phone number is too long" do
+      before { @sbcon.con_tel_num = "1" * 12 }
+      it { should_not be_valid }
+    end
+
+    describe "when phone number is too short" do
+      before { @sbcon.con_tel_num = "2" * 10 }
+      it { should_not be_valid }
+    end
+
+    describe "invalid phone number" do
+      it "should be invalid" do
+        phone_nr = %w[!s345w34t4@ PHOTOREDUCE 12345678901]
+        phone_nr.each do |invalid_number|
+          @sbcon.con_tel_num = invalid_number
+          @sbcon.should_not be_valid
+        end
+      end
+    end
+
+    describe "valid phone number" do
+      it "should be valid" do
+        phone_nr = %w[01382427400 01315555555]
+        phone_nr.each do |valid_number|
+          @sbcon.con_tel_num = valid_number
+          @sbcon.should be_valid
+        end
+      end
+    end
+  end
+
+  describe "when there are too many initials" do
+    before { @sbcon.initials = "a" * 7 }
+    it { should_not be_valid }
   end
 
 end

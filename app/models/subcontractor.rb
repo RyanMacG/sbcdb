@@ -20,6 +20,11 @@ class Subcontractor < ActiveRecord::Base
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :con_email, format: { with: VALID_EMAIL_REGEX }
+
+  VALID_PHONE_REGEX = /\A[0]\d{10}\z/
+  validates :con_tel_num, length: { is: 11 }, format: { with: VALID_PHONE_REGEX }
+
+  validates :initials, length: { maximum: 6 }
 end
 # == Schema Information
 #
