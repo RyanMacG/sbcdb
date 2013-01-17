@@ -26,4 +26,5 @@ group :test do
   gem 'capybara', '1.1.2'
   gem 'rb-fsevent', require: false
   gem 'growl'
+  gem 'factory_girl_rails'
 end
