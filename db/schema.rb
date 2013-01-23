@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(:version => 20130110145800) do
     t.string   "vat_no"
     t.string   "cscs_card"
     t.string   "op_avail"
-    t.decimal  "hr_rate_fitter",   :precision => 18, :scale => 0
-    t.decimal  "hr_rate_other",    :precision => 18, :scale => 0
+    t.float    "hr_rate_fitter",   :limit => 24
+    t.float    "hr_rate_other",    :limit => 24
     t.string   "scot"
     t.string   "ne_eng"
     t.string   "nw_eng"
@@ -77,17 +77,8 @@ ActiveRecord::Schema.define(:version => 20130110145800) do
     t.string   "cis_ver_no"
     t.string   "cis_stat"
     t.string   "jtc_comm"
-    t.datetime "created_at",                                      :null => false
-    t.datetime "updated_at",                                      :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
-
-  create_table "sysdiagrams", :primary_key => "diagram_id", :force => true do |t|
-    t.string  "name",         :limit => 128, :null => false
-    t.integer "principal_id",                :null => false
-    t.integer "version"
-    t.binary  "definition"
-  end
-
-  add_index "sysdiagrams", ["principal_id", "name"], :name => "UK_principal_name", :unique => true
 
 end
