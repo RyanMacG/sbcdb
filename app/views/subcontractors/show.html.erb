@@ -1,3 +1,9 @@
-<p>Subcontractor Details: <%= @sbcon.sbcon_name %></p>
-
+<% provide(:title, @sbcon.sbcon_name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1><%= @sbcon.sbcon_name %></h1>
+    </section>
+  </aside>
+</div>
 <p>Contact Details: <%= @sbcon.con_name %>, <%= @sbcon.con_email %></p>

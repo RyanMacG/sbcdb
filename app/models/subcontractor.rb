@@ -1,10 +1,10 @@
 class Subcontractor < ActiveRecord::Base
   attr_accessible :acpt_tc, :address1, :address2, :amnt_con_all, :amnt_emp, :amnt_prod,
   :amnt_pub, :approved_status, :cis_stat, :cis_ver_no, :city, :comments, :con_email, :con_name,
-  :con_tel_num, :country, :cr_ni_no, :cscs_card, :date_entered, :exp_date_con_all,
+  :con_tel_num, :county, :country, :cr_ni_no, :cscs_card, :date_entered, :exp_date_con_all,
   :exp_date_emp, :exp_date_pub, :hr_rate_fitter, :hr_rate_other, :hs_pol, :initials,
   :ins_con_all, :ins_emp, :ins_prod, :ins_pub, :jtc_comm, :ldn, :meth_state, :mid, :ne_eng,
-  :nw_eng, :op_avail, :position, :postcode, :prov_emp, :prov_pub, :rating, :ref_con_all,
+  :nw_eng, :wales, :op_avail, :position, :postcode, :prov_prod, :exp_date_prod, :prov_con_all, :prov_emp, :prov_pub, :rating, :ref_con_all,
   :ref_emp, :ref_prod, :ref_pub, :renewal_date, :risk_ass, :sbcon_name,
   :sbcon_type, :scot, :se_eng, :signed, :signed_date, :sw_eng, :utr_no, :vat_no, :vat_reg
 
@@ -22,9 +22,11 @@ class Subcontractor < ActiveRecord::Base
   validates :con_email, format: { with: VALID_EMAIL_REGEX }
 
   VALID_PHONE_REGEX = /\A[0]\d{10}\z/
-  validates :con_tel_num, length: { is: 11 }, format: { with: VALID_PHONE_REGEX }
+  validates :con_tel_num, length: { is: 11 },
+                          format: { with: VALID_PHONE_REGEX }
 
   validates :initials, length: { maximum: 6 }
+  validates :utr_no, length: { is: 10 }
 end
 # == Schema Information
 #

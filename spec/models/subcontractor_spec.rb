@@ -35,6 +35,11 @@ describe Subcontractor do
     it { should_not be_valid }
   end
 
+  describe "when UTR number is too long" do
+    before { @sbcon.utr_no = "1" * 11 }
+    it { should_not be_valid }
+  end
+
   describe "email" do
     describe "when email format is invalid" do
       it "should be invalid" do
@@ -65,7 +70,7 @@ describe Subcontractor do
     end
 
     describe "when phone number is too short" do
-      before { @sbcon.con_tel_num = "2" * 10 }
+      before { @sbcon.con_tel_num = "2" * 9 }
       it { should_not be_valid }
     end
 
