@@ -63,6 +63,18 @@
     Expiry Date: <%= @sbcon.exp_date_prod %>
   <% end %>
   Employer Liability: <%= @sbcon.ins_emp %>
+  <% if @sbcon.prov_emp? %>
+    Provider: <%= @sbcon.prov_emp %> <br>
+  <% end %>
+  <% if @sbcon.ref_emp? %>
+    Refence Number: <%= @sbcon.ref_emp %> <br>
+  <% end %>
+  <% if @sbcon.amnt_emp? %>
+    Amount of Cover: <%= number_to_currency(@sbcon.amnt_emp, unit: '£') %> <br>
+  <% end %>
+  <% if @sbcon.exp_date_emp? %>
+    Expiry Date: <%= @sbcon.exp_date_emp %>
+  <% end %>
 </p>
 
 <!-- # == Schema Information
