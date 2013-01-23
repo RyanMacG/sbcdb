@@ -6,4 +6,110 @@
     </section>
   </aside>
 </div>
-<p>Contact Details: <%= @sbcon.con_name %>, <%= @sbcon.con_email %></p>
+<p>
+  <h5>Contact Details:</h5>
+  <%= @sbcon.con_name %> | <a href="mailto:<%= @sbcon.con_email %>">
+  <%= @sbcon.con_email %></a> <br>
+  <%= @sbcon.con_tel_num %></p>
+<p>
+  <h5>Address:</h5>
+  <%= @sbcon.address1 %> <br>
+  <% if @sbcon.address2? %>
+    <%= @sbcon.address2 %><br>
+  <% end %>
+  <%= @sbcon.city %> <br>
+  <% if @sbcon.county? %>
+    <%= @sbcon.county %><br>
+  <% end %>
+  <%= @sbcon.postcode %><br>
+  <%= @sbcon.country %>
+</p>
+<p>
+  <h5>Staff Details:</h5>
+  Available Staff: <%= @sbcon.op_avail %> <br>
+  Hourly Rate (Fitter): <%= number_to_currency(@sbcon.hr_rate_fitter, unit: '£') %> <br>
+  Hourly Rate (Other): <%= number_to_currency(@sbcon.hr_rate_other, unit: '£') %>
+</p>
+<p>
+  <h5>Areas Available:</h5>
+  Scotland: <%= @sbcon.scot %> <br>
+  North East England: <%= @sbcon.ne_eng %> <br>
+  North West England: <%= @sbcon.nw_eng %> <br>
+  Midlands <%= @sbcon.mid %> <br>
+  South East England: <%= @sbcon.se_eng %> <br>
+  South West England: <%= @sbcon.sw_eng %> <br>
+  London: <%= @sbcon.ldn %> <br>
+  Wales: <%= @sbcon.wales %>
+</p>
+<p>
+  <h5>VAT, etc:</h5>
+  UTR Number: <%= @sbcon.utr_no %> <br>
+  CR/NI Number: <%= @sbcon.cr_ni_no %> <br>
+  CSCS Cards: <%= @sbcon.cscs_card %>
+</p>
+<p>
+  <h5>Inscurance:</h5>
+  Product Liability: <%= @sbcon.ins_prod %> <br>
+  <% if @sbcon.prov_prod? %>
+    Provider: <%= @sbcon.prov_prod %> <br>
+  <% end %>
+  <% if @sbcon.ref_prod? %>
+    Refence Number: <%= @sbcon.ref_prod %> <br>
+  <% end %>
+  <% if @sbcon.amnt_prod? %>
+    Amount of Cover: <%= number_to_currency(@sbcon.amnt_prod, unit: '£') %> <br>
+  <% end %>
+  <% if @sbcon.exp_date_prod? %>
+    Expiry Date: <%= @sbcon.exp_date_prod %>
+  <% end %>
+  Employer Liability: <%= @sbcon.ins_emp %>
+</p>
+
+<!-- # == Schema Information
+#
+# Table name: subcontractors
+#  utr_no           :string(255)
+#  cr_ni_no         :string(255)
+#  vat_reg          :string(255)
+#  vat_no           :string(255)
+#  cscs_card        :string(255)
+#  ins_prod         :string(255)
+#  ins_emp          :string(255)
+#  prov_prod        :string(255)
+#  prov_emp         :string(255)
+#  ref_prod         :string(255)
+#  ref_emp          :string(255)
+#  amnt_prod        :string(255)
+#  amnt_emp         :string(255)
+#  exp_date_prod    :date
+#  exp_date_emp     :date
+#  ins_pub          :string(255)
+#  ins_con_all      :string(255)
+#  prov_pub         :string(255)
+#  prov_con_all     :string(255)
+#  ref_pub          :string(255)
+#  ref_con_all      :string(255)
+#  amnt_pub         :string(255)
+#  amnt_con_all     :string(255)
+#  exp_date_pub     :date
+#  exp_date_con_all :date
+#  acpt_tc          :string(255)
+#  hs_pol           :string(255)
+#  meth_state       :string(255)
+#  risk_ass         :string(255)
+#  comments         :string(255)
+#  signed           :string(255)
+#  signed_date      :date
+#  position         :string(255)
+#  date_entered     :date
+#  renewal_date     :date
+#  initials         :string(255)
+#  approved_status  :string(255)
+#  sbcon_type       :string(255)
+#  rating           :string(255)
+#  cis_ver_no       :string(255)
+#  cis_stat         :string(255)
+#  jtc_comm         :string(255)
+#  created_at       :datetime        not null
+#  updated_at       :datetime        not null
+# -->

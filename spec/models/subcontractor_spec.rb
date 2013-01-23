@@ -122,8 +122,8 @@ end
 #  vat_no           :string(255)
 #  cscs_card        :string(255)
 #  op_avail         :string(255)
-#  hr_rate_fitter   :integer
-#  hr_rate_other    :integer
+#  hr_rate_fitter   :float(24)
+#  hr_rate_other    :float(24)
 #  scot             :string(255)
 #  ne_eng           :string(255)
 #  nw_eng           :string(255)
