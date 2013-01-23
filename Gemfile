@@ -5,6 +5,7 @@ gem 'jquery-rails'
 gem 'tiny_tds'
 gem 'activerecord-sqlserver-adapter', require: false
 gem 'bootstrap-sass'
+gem 'bootstrap-datepicker-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -26,4 +27,5 @@ group :test do
   gem 'capybara', '1.1.2'
   gem 'rb-fsevent', require: false
   gem 'growl'
+  gem 'factory_girl_rails'
 end

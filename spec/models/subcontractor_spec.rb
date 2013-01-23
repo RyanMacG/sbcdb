@@ -10,9 +10,10 @@ describe Subcontractor do
    ins_pub: "yes", prov_pub: "Axa", amnt_pub: "50000", ref_pub: "A3002",
    exp_date_pub: "16/01/2015", ins_con_all: "no", acpt_tc: "yes", hs_pol: "use JTC's",
    meth_state: "yes", risk_ass: "no", signed: "Jimmy Blogs", signed_date: "13/01/2013",
-   position: "Manager", date_entered: "16/01/2013", initials: "KT", renewal_date: "16/01/2013",
-   approved_status: "yes", sbcon_type: "Labour Only", rating: "4", cis_ver_no: "4567",
-   cis_stat: "0.00%", jtc_comm: "Previously completed 5 contracts for us") }
+   position: "Manager", date_entered: "16/01/2013", initials: "KT",
+   renewal_date: "16/01/2013", approved_status: "yes", sbcon_type: "Labour Only",
+   rating: "4", cis_ver_no: "4567", cis_stat: "0.00%",
+   jtc_comm: "Previously completed 5 contracts for us") }
 
   subject { @sbcon }
 
@@ -31,6 +32,11 @@ describe Subcontractor do
   describe "when names are too long" do
     before { @sbcon.sbcon_name = "a" * 51 }
     before { @sbcon.con_name = "a" * 51 }
+    it { should_not be_valid }
+  end
+
+  describe "when UTR number is too long" do
+    before { @sbcon.utr_no = "1" * 11 }
     it { should_not be_valid }
   end
 
@@ -64,7 +70,7 @@ describe Subcontractor do
     end
 
     describe "when phone number is too short" do
-      before { @sbcon.con_tel_num = "2" * 10 }
+      before { @sbcon.con_tel_num = "2" * 9 }
       it { should_not be_valid }
     end
 

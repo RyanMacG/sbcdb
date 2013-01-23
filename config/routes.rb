@@ -1,9 +1,10 @@
 Sbcdb::Application.routes.draw do
-  get "subcontractors/new"
 
   root to: 'static_pages#home'
 
   match 'help', to: 'static_pages#help'
+  match 'new',  to: 'subcontractors#new'
+  resources :subcontractors
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
