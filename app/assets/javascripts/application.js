@@ -12,4 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-datepicker
 //= require_tree .
+
+$(document).on("focus", "[class='date']", function(e){
+    $(this).datepicker({"format": "dd-mm-yyyy", "weekStart": 1, "autoclose": true});
+});
