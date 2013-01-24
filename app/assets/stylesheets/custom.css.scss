@@ -25,6 +25,7 @@ section{
 
 textarea {
   resize: vertical;
+  height: 100px;
 }
 
 .center {
@@ -76,9 +77,7 @@ p {
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: white;
     text-decoration: none;
-    text-transform: uppercase;
   }
 }
 
