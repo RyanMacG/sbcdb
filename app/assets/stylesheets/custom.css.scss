@@ -25,6 +25,7 @@ section{
 
 textarea {
   resize: vertical;
+  height: 100px;
 }
 
 .center {
@@ -34,11 +35,26 @@ textarea {
   }
 }
 
+.container {
+  width: 70%;
+}
+
 
 /* Typography */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+}
+
+/* index */
+.table {
+  width: auto;
+  th {
+    color: $grayLight;
+  }
+  th, td {
+    text-align: center;
+  }
 }
 
 h1 {
@@ -76,9 +92,7 @@ p {
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: white;
     text-decoration: none;
-    text-transform: uppercase;
   }
 }
 
