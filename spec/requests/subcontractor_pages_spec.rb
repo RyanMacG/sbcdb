@@ -12,16 +12,16 @@ describe "SubcontractorPages" do
   end
 
   describe "Subcontractor creation" do
-    
+
     let(:submit) { "Submit" }
     before { visit new_path }
-    
+
     describe "with invalid info" do
       it "should not create a user" do
         expect { click_button submit }.not_to change(Subcontractor, :count)
       end
     end
-    
+
     describe "with valid info" do
       before do
         fill_in "Name",                         with: "New Subcontractor"
@@ -38,7 +38,7 @@ describe "SubcontractorPages" do
         fill_in "VAT No.",                      with: "GB46003322"
         fill_in "UTR No.",                      with: "1234567890"
         fill_in "CR/NI No.",                    with: "XX YY 11 22"
-        fill_in "CSCS Card?",                   with: "Yes"
+        select  "Yes",                          from: "CSCS Card?"
         fill_in "Available Operatives",         with: "6"
         fill_in "Hourly Rate (Fitter)",         with: "8.61"
         fill_in "Hourly Rate (Other)",          with: "8.21"

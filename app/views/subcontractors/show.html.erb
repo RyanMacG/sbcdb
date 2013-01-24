@@ -6,4 +6,143 @@
     </section>
   </aside>
 </div>
-<p>Contact Details: <%= @sbcon.con_name %>, <%= @sbcon.con_email %></p>
+<p>
+  <h5>Contact Details:</h5>
+  <%= @sbcon.con_name %> | <a href="mailto:<%= @sbcon.con_email %>">
+  <%= @sbcon.con_email %></a> <br>
+  <%= @sbcon.con_tel_num %></p>
+<p>
+  <h5>Address:</h5>
+  <%= @sbcon.address1 %> <br>
+  <% if @sbcon.address2? %>
+    <%= @sbcon.address2 %><br>
+  <% end %>
+  <%= @sbcon.city %> <br>
+  <% if @sbcon.county? %>
+    <%= @sbcon.county %><br>
+  <% end %>
+  <%= @sbcon.postcode %><br>
+  <%= @sbcon.country %>
+</p>
+<p>
+  <h5>Staff Details:</h5>
+  Available Staff: <%= @sbcon.op_avail %> <br>
+  Hourly Rate (Fitter): <%= number_to_currency(@sbcon.hr_rate_fitter, unit: '£') %> <br>
+  Hourly Rate (Other): <%= number_to_currency(@sbcon.hr_rate_other, unit: '£') %>
+</p>
+<p>
+  <h5>Areas Available:</h5>
+  Scotland: <%= @sbcon.scot %> <br>
+  North East England: <%= @sbcon.ne_eng %> <br>
+  North West England: <%= @sbcon.nw_eng %> <br>
+  Midlands <%= @sbcon.mid %> <br>
+  South East England: <%= @sbcon.se_eng %> <br>
+  South West England: <%= @sbcon.sw_eng %> <br>
+  London: <%= @sbcon.ldn %> <br>
+  Wales: <%= @sbcon.wales %>
+</p>
+<p>
+  <h5>VAT, etc:</h5>
+  UTR Number: <%= @sbcon.utr_no %> <br>
+  CR/NI Number: <%= @sbcon.cr_ni_no %> <br>
+  CSCS Cards: <%= @sbcon.cscs_card %>
+</p>
+<p>
+  <h5>Insurance:</h5>
+  Product Liability: <%= @sbcon.ins_prod %> <br>
+  <% if @sbcon.prov_prod? %>
+    Provider: <%= @sbcon.prov_prod %> <br>
+  <% end %>
+  <% if @sbcon.ref_prod? %>
+    Refence Number: <%= @sbcon.ref_prod %> <br>
+  <% end %>
+  <% if @sbcon.amnt_prod? %>
+    Amount of Cover: <%= number_to_currency(@sbcon.amnt_prod, unit: '£') %> <br>
+  <% end %>
+  <% if @sbcon.exp_date_prod? %>
+    Expiry Date: <%= @sbcon.exp_date_prod.strftime('%d-%m-%Y') %>
+  <% end %>
+
+  Employer Liability: <%= @sbcon.ins_emp %> <br>
+  <% if @sbcon.prov_emp? %>
+    Provider: <%= @sbcon.prov_emp %> <br>
+  <% end %>
+  <% if @sbcon.ref_emp? %>
+    Refence Number: <%= @sbcon.ref_emp %> <br>
+  <% end %>
+  <% if @sbcon.amnt_emp? %>
+    Amount of Cover: <%= number_to_currency(@sbcon.amnt_emp, unit: '£') %> <br>
+  <% end %>
+  <% if @sbcon.exp_date_emp? %>
+    Expiry Date: <%= @sbcon.exp_date_emp.strftime('%d-%m-%Y') %> <br>
+  <% end %>
+
+  Public Liability: <%= @sbcon.ins_pub %> <br>
+  <% if @sbcon.prov_pub? %>
+    Provider: <%= @sbcon.prov_pub %> <br>
+  <% end %>
+  <% if @sbcon.ref_pub? %>
+    Refence Number: <%= @sbcon.ref_emp %> <br>
+  <% end %>
+  <% if @sbcon.amnt_pub? %>
+    Amount of Cover: <%= number_to_currency(@sbcon.amnt_pub, unit: '£') %> <br>
+  <% end %>
+  <% if @sbcon.exp_date_pub? %>
+    Expiry Date: <%= @sbcon.exp_date_pub.strftime('%d-%m-%Y') %> <br>
+  <% end %>
+
+  Contractors All Risk: <%= @sbcon.ins_con_all %> <br>
+  <% if @sbcon.prov_con_all? %>
+    Provider: <%= @sbcon.prov_con_all %> <br>
+  <% end %>
+  <% if @sbcon.ref_con_all? %>
+    Refence Number: <%= @sbcon.ref_con_all %> <br>
+  <% end %>
+  <% if @sbcon.amnt_con_all? %>
+    Amount of Cover: <%= number_to_currency(@sbcon.amnt_con_all, unit: '£') %> <br>
+  <% end %>
+  <% if @sbcon.exp_date_con_all? %>
+    Expiry Date: <%= @sbcon.exp_date_con_all.strftime('%d-%m-%Y') %> <br>
+  <% end %>
+</p>
+<p>
+  <h5>T&ampCs, etc.</h5>
+  Accepted T&ampC: <%= @sbcon.acpt_tc %> <br>
+  Health &amp Safety Policy: <%= @sbcon.hs_pol %> <br>
+  Method Statements: <%= @sbcon.meth_state %> <br>
+  Risk Assessments: <%= @sbcon.risk_ass %> <br>
+  <br>
+  <% if @sbcon.comments? %>
+    Additional Comments:<%= @sbcon.comments %> <br>
+  <% end %>
+  Signed by: <%= @sbcon.signed %> on <%= @sbcon.signed_date.strftime('%d-%m-%Y') %> <br>
+  Position: <%= @sbcon.position %>
+</p>
+<p>
+  <h5>JTC Internal</h5>
+  Date Entered: <%= @sbcon.date_entered.strftime('%d-%m-%Y') %> by <%= @sbcon.initials %> <br>
+  Date renewed: <%= @sbcon.renewal_date.strftime('%d-%m-%Y') %> <br>
+  Status: <%= @sbcon.approved_status %> <br>
+  Rating: <%= @sbcon.rating %> <br>
+  CIS Verification Number: <%= @sbcon.cis_ver_no %> <br>
+  CIS Status: <%= @sbcon.cis_stat %> <br>
+  <% if @sbcon.jtc_comm? %>
+    JTC Comments: <%= @sbcon.jtc_comm %>
+  <% end %>
+</p>
+
+
+<!-- # == Schema Information
+#  position         :string(255)
+#  date_entered     :date
+#  renewal_date     :date
+#  initials         :string(255)
+#  approved_status  :string(255)
+#  sbcon_type       :string(255)
+#  rating           :string(255)
+#  cis_ver_no       :string(255)
+#  cis_stat         :string(255)
+#  jtc_comm         :string(255)
+#  created_at       :datetime        not null
+#  updated_at       :datetime        not null
+# -->

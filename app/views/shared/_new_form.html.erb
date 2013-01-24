@@ -46,7 +46,7 @@
       <%= f.text_field :cr_ni_no %>
 
       <%= f.label :cscs_card, "CSCS Card?" %>
-      <%= f.text_field :cscs_card %>
+      <%= f.select :cscs_card, options_for_select([["No"], ["Yes"]]) %>
 
       <%= f.label :op_avail, "Available Operatives" %>
       <%= f.text_field :op_avail %>
