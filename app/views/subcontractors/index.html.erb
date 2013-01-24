@@ -1,0 +1,45 @@
+<% provide(:title, 'All Subcontractors') %>
+<h1>Subcontractors List</h1>
+
+<%= will_paginate @sbcons %>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><%= sortable_column "Subcontractor", column: "sbcon_name" %></th>
+      <th><%= sortable_column "Number", column: "con_tel_num" %></th>
+      <th><%= sortable_column "CSCS", column: "cscs_card" %></th>
+      <th><%= sortable_column "Scotland", column: "scot" %></th>
+      <th><%= sortable_column "NE England", column: "ne_eng" %></th>
+      <th><%= sortable_column "NW England", column: "nw_eng" %></th>
+      <th><%= sortable_column "Midlands", column: "mid" %></th>
+      <th><%= sortable_column "SE England", column: "se_eng" %></th>
+      <th><%= sortable_column "SW England", column: "sw_eng" %></th>
+      <th><%= sortable_column "London", column: "ldn" %></th>
+      <th><%= sortable_column "Wales", column: "wales" %></th>
+      <th><%= sortable_column "Operatives", column: "op_avail" %></th>
+      <th><%= sortable_column "Status", column: "approved_status"%></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @sbcons.each do |subcontractor| %>
+    <tr>
+      <td><%= link_to subcontractor.sbcon_name, subcontractor %></td>
+      <td><%= subcontractor.con_tel_num %></td>
+      <td><%= subcontractor.cscs_card %></td>
+      <td><%= subcontractor.scot %></td>
+      <td><%= subcontractor.ne_eng %></td>
+      <td><%= subcontractor.nw_eng %></td>
+      <td><%= subcontractor.mid %></td>
+      <td><%= subcontractor.se_eng %></td>
+      <td><%= subcontractor.sw_eng %></td>
+      <td><%= subcontractor.ldn %></td>
+      <td><%= subcontractor.wales %></td>
+      <td><%= subcontractor.op_avail %></td>
+      <td><%= subcontractor.approved_status %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @sbcons %>
