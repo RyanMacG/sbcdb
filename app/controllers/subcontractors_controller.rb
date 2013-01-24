@@ -1,4 +1,5 @@
 class SubcontractorsController < ApplicationController
+  handles_sortable_columns
   def new
     @subcontractor = Subcontractor.new
   end
@@ -14,5 +15,10 @@ class SubcontractorsController < ApplicationController
 
   def show
     @sbcon = Subcontractor.find(params[:id])
+  end
+
+  def index
+    order = sortable_column_order
+    @sbcons = Subcontractor.order(order).paginate(page: params[:page]).per_page(30)
   end
 end
