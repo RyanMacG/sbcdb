@@ -46,4 +46,8 @@ class SubcontractorsController < ApplicationController
       render 'edit'
     end
   end
+
+  def due_for_renewal
+    @sbcons = Subcontractor.where("renewal_date <= ?", 31.days.from_now).page(params[:page]).per_page(10)
+  end
 end

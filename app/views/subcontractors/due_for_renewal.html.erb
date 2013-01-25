@@ -1,0 +1,35 @@
+<% provide(:title, "Due for Renewal") %>
+<h1>Subcontractors due for renewal</h1>
+
+<%= will_paginate @sbcons %>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Email</th>
+      <th>CSCS</th>
+      <th>Operatives</th>
+      <th>Renewal Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @sbcons.each do |subcontractor| %>
+    <tr>
+      <td><%= link_to subcontractor.sbcon_name, subcontractor %></td>
+      <td><%= subcontractor.con_tel_num %></td>
+      <td><a href="mailto:<%= subcontractor.con_email %>"> 
+        <%= subcontractor.con_email %></a></td>
+      <td><%= subcontractor.cscs_card %></td>
+      <td><%= subcontractor.op_avail %></td>
+      <td class="renewal"><%= subcontractor.renewal_date.strftime("%d-%m-%Y") %></td>
+      <td><%= subcontractor.approved_status %></td>
+      <td class="edit"><%= link_to "edit", edit_subcontractor_path(subcontractor), class: "btn btn-success btn-mini" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @sbcons %>
