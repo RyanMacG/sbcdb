@@ -1,88 +1,91 @@
 <div class="row">
-  <div class="field">
-    <%= form_for (@subcontractor) do |f| %>
-      <%= render 'shared/error_messages' %>
+  <div class="field offset5">
+  <%= form_for (@subcontractor) do |f| %>
+    <%= render 'shared/error_messages' %>
 
-      <%= f.label :sbcon_name, "Name" %>
-      <%= f.text_field :sbcon_name %>
+    <%= f.label :sbcon_name, "Name" %>
+    <%= f.text_field :sbcon_name %>
 
-      <%= f.label :con_name, "Contact Name" %>
-      <%= f.text_field :con_name %>
+    <%= f.label :con_name, "Contact Name" %>
+    <%= f.text_field :con_name %>
 
-      <%= f.label :con_email, "Contact Email" %>
-      <%= f.text_field :con_email %>
+    <%= f.label :con_email, "Contact Email" %>
+    <%= f.text_field :con_email %>
 
-      <%= f.label :con_tel_num, "Contact Telephone Number" %>
-      <%= f.text_field :con_tel_num %>
+    <%= f.label :con_tel_num, "Contact Telephone Number" %>
+    <%= f.text_field :con_tel_num %>
 
-      <%= f.label :address1, "Address Line 1" %>
-      <%= f.text_field :address1 %>
+    <%= f.label :address1, "Address Line 1" %>
+    <%= f.text_field :address1 %>
 
-      <%= f.label :address2, "Address Line 2" %>
-      <%= f.text_field :address2 %>
+    <%= f.label :address2, "Address Line 2" %>
+    <%= f.text_field :address2 %>
 
-      <%= f.label :city, "Town/City" %>
-      <%= f.text_field :city %>
+    <%= f.label :city, "Town/City" %>
+    <%= f.text_field :city %>
 
-      <%= f.label :postcode, "Postcode" %>
-      <%= f.text_field :postcode %>
+    <%= f.label :postcode, "Postcode" %>
+    <%= f.text_field :postcode %>
 
-      <%= f.label :county, "County" %>
-      <%= f.text_field :county %>
+    <%= f.label :county, "County" %>
+    <%= f.text_field :county %>
 
-      <%= f.label :country, "Country" %>
-      <%= f.text_field :country %>
+    <%= f.label :country, "Country" %>
+    <%= f.text_field :country %>
 
-      <%= f.label :vat_reg, "VAT Registered?" %>
-      <%= f.select :vat_reg, options_for_select([["No"], ["Yes"]]) %>
+    <%= f.label :vat_reg, "VAT Registered?" %>
+    <%= f.select :vat_reg, options_for_select([["No"], ["Yes"]]) %>
 
-      <%= f.label :vat_no, "VAT No." %>
-      <%= f.text_field :vat_no %>
+    <%= f.label :vat_no, "VAT No." %>
+    <%= f.text_field :vat_no %>
 
-      <%= f.label :utr_no, "UTR No." %>
-      <%= f.text_field :utr_no %>
+    <%= f.label :utr_no, "UTR No." %>
+    <%= f.text_field :utr_no %>
 
-      <%= f.label :cr_ni_no, "CR/NI No." %>
-      <%= f.text_field :cr_ni_no %>
+    <%= f.label :cr_ni_no, "CR/NI No." %>
+    <%= f.text_field :cr_ni_no %>
 
-      <%= f.label :cscs_card, "CSCS Card?" %>
-      <%= f.select :cscs_card, options_for_select([["No"], ["Yes"]]) %>
+    <%= f.label :cscs_card, "CSCS Card?" %>
+    <%= f.select :cscs_card, options_for_select([["No"], ["Yes"]]) %>
 
-      <%= f.label :op_avail, "Available Operatives" %>
-      <%= f.text_field :op_avail %>
+    <%= f.label :op_avail, "Available Operatives" %>
+    <%= f.text_field :op_avail %>
 
-      <%= f.label :hr_rate_fitter, "Hourly Rate (Fitter)" %>
-      <%= f.text_field :hr_rate_fitter %>
+    <%= f.label :hr_rate_fitter, "Hourly Rate (Fitter)" %>
+    <%= f.text_field :hr_rate_fitter %>
 
-      <%= f.label :hr_rate_other, "Hourly Rate (Other)" %>
-      <%= f.text_field :hr_rate_other %>
+    <%= f.label :hr_rate_other, "Hourly Rate (Other)" %>
+    <%= f.text_field :hr_rate_other %>
+  </div>
+    <h2>Areas Covered:</h2>
+  <div class="field offset5">
+    <%= f.label :scot, "Scotland" %>
+    <%= f.select :scot, options_for_select([["No"], ["Yes"]]) %>
 
-      <h2>Areas Covered:</h2>
-      <%= f.label :scot, "Scotland" %>
-      <%= f.select :scot, options_for_select([["No"], ["Yes"]]) %>
+    <%= f.label :ne_eng, "North East England" %>
+    <%= f.select :ne_eng, options_for_select([["No"], ["Yes"]]) %>
 
-      <%= f.label :ne_eng, "North East England" %>
-      <%= f.select :ne_eng, options_for_select([["No"], ["Yes"]]) %>
+    <%= f.label :nw_eng, "North West England" %>
+    <%= f.select :nw_eng, options_for_select([["No"], ["Yes"]]) %>
 
-      <%= f.label :nw_eng, "North West England" %>
-      <%= f.select :nw_eng, options_for_select([["No"], ["Yes"]]) %>
+    <%= f.label :se_eng, "South East England" %>
+    <%= f.select :se_eng, options_for_select([["No"], ["Yes"]]) %>
 
-      <%= f.label :se_eng, "South East England" %>
-      <%= f.select :se_eng, options_for_select([["No"], ["Yes"]]) %>
+    <%= f.label :sw_eng, "South West England" %>
+    <%= f.select :sw_eng, options_for_select([["No"], ["Yes"]]) %>
 
-      <%= f.label :sw_eng, "South West England" %>
-      <%= f.select :sw_eng, options_for_select([["No"], ["Yes"]]) %>
+    <%= f.label :mid, "Midlands" %>
+    <%= f.select :mid, options_for_select([["No"], ["Yes"]]) %>
 
-      <%= f.label :mid, "Midlands" %>
-      <%= f.select :mid, options_for_select([["No"], ["Yes"]]) %>
+    <%= f.label :wales, "Wales" %>
+    <%= f.select :wales, options_for_select([["No"], ["Yes"]]) %>
 
-      <%= f.label :wales, "Wales" %>
-      <%= f.select :wales, options_for_select([["No"], ["Yes"]]) %>
+    <%= f.label :ldn, "London" %>
+    <%= f.select :ldn, options_for_select([["No"], ["Yes"]]) %>
+  </div>
 
-      <%= f.label :ldn, "London" %>
-      <%= f.select :ldn, options_for_select([["No"], ["Yes"]]) %>
-
-      <h2>Insurance</h2>
+    <h2>Insurance</h2>
+    <div class="field offset5">
       <%= f.label :ins_prod, "Product Liability" %>
       <%= f.select :ins_prod, options_for_select([["No"], ["Yes"]]) %>
 
@@ -142,7 +145,10 @@
 
       <%= f.label :exp_date_con_all, "Expiry Date (Contractors)" %>
       <%= f.text_field :exp_date_con_all, class: "date" %>
-
+    </div>
+      
+    <h2>T&ampCs, etc.</h2>
+    <div class="field offset5">
       <%= f.label :acpt_tc, "Accept T&C" %>
       <%= f.select :acpt_tc, options_for_select([["No"], ["Yes"]]) %>
 
@@ -194,8 +200,8 @@
 
       <%= f.label :jtc_comm, "JTC Comments" %>
       <%= f.text_area :jtc_comm %>
+    </div>
 
-      <p><%= f.submit "Submit", class: "btn" %></p>
-    <% end %>
-  </div>
+    <p><%= f.submit "Submit", class: "offset6 btn btn-large" %></p>
+  <% end %>
 </div>
