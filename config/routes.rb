@@ -1,9 +1,10 @@
 Sbcdb::Application.routes.draw do
 
-  root to: 'static_pages#home'
+  root to: 'subcontractors#due_for_renewal'
 
-  match 'help', to: 'static_pages#help'
-  match 'new',  to: 'subcontractors#new'
+  match 'help',  to: 'static_pages#help'
+  match 'new',   to: 'subcontractors#new'
+  match 'renew', to: 'subcontractors#due_for_renewal'
   resources :subcontractors
 
   # The priority is based upon order of creation:
