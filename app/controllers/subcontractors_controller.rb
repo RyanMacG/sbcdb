@@ -19,16 +19,17 @@ class SubcontractorsController < ApplicationController
   end
 
   def index
-    order = sortable_column_order do |column, direction|
-    case column
-      when "approved_status"
-        "#{column} #{direction}"
-      when "created_at", "updated_at"
-        "#{column} #{direction}, approved_status ASC"
-      else
-        "approved_status, sbcon_name ASC"
-      end
-    end
+    # order = sortable_column_order do |column, direction|
+    # case column
+    #   when "approved_status"
+    #     "#{column} #{direction}"
+    #   when "created_at", "updated_at"
+    #     "#{column} #{direction}, approved_status ASC"
+    #   else
+    #     "approved_status, sbcon_name ASC"
+    #   end
+    # end
+    order = sortable_column_order
     @sbcons = Subcontractor.order(order).paginate(page: params[:page]).per_page(30)
   end
 
