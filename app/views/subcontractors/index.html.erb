@@ -1,12 +1,13 @@
 <% provide(:title, 'All Subcontractors') %>
 <h1>Subcontractors List</h1>
 
+<%= link_to "Clear sorting", subcontractors_path, class: "btn btn-mini" %>
 <%= will_paginate @sbcons %>
 
 <table class="table table-hover">
   <thead>
     <tr>
-      <th><%= sortable_column "Subcontractor", column: "sbcon_name" %></th>
+      <th><%= sortable_column "Name", column: "sbcon_name" %></th>
       <th><%= sortable_column "Number", column: "con_tel_num" %></th>
       <th><%= sortable_column "CSCS", column: "cscs_card" %></th>
       <th><%= sortable_column "Scotland", column: "scot" %></th>
@@ -18,6 +19,10 @@
       <th><%= sortable_column "London", column: "ldn" %></th>
       <th><%= sortable_column "Wales", column: "wales" %></th>
       <th><%= sortable_column "Operatives", column: "op_avail" %></th>
+      <th><%= sortable_column "Product Liability", column: "ins_prod" %></th>
+      <th><%= sortable_column "Employer Liability", column: "ins_emp" %></th>
+      <th><%= sortable_column "Public Liability", column: "ins_pub" %></th>
+      <th><%= sortable_column "Contractors All Risk", column: "ins_con_all" %></th>
       <th><%= sortable_column "Status", column: "approved_status" %></th>
     </tr>
   </thead>
@@ -36,6 +41,10 @@
       <td><%= subcontractor.ldn %></td>
       <td><%= subcontractor.wales %></td>
       <td><%= subcontractor.op_avail %></td>
+      <td><%= subcontractor.ins_prod %></td>
+      <td><%= subcontractor.ins_emp %></td>
+      <td><%= subcontractor.ins_pub %></td>
+      <td><%= subcontractor.ins_con_all %></td>
       <td><%= subcontractor.approved_status %></td>
       <td class="edit"><%= link_to "edit", edit_subcontractor_path(subcontractor), class: "btn btn-success btn-mini" %></td>
     </tr>
