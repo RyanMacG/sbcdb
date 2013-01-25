@@ -18,7 +18,7 @@
       <th><%= sortable_column "London", column: "ldn" %></th>
       <th><%= sortable_column "Wales", column: "wales" %></th>
       <th><%= sortable_column "Operatives", column: "op_avail" %></th>
-      <th><%= sortable_column "Status", column: "approved_status"%></th>
+      <th><%= sortable_column "Status", column: "approved_status" %></th>
     </tr>
   </thead>
   <tbody>
@@ -37,6 +37,7 @@
       <td><%= subcontractor.wales %></td>
       <td><%= subcontractor.op_avail %></td>
       <td><%= subcontractor.approved_status %></td>
+      <td class="edit"><%= link_to "edit", edit_subcontractor_path(subcontractor), class: "btn btn-success btn-mini" %></td>
     </tr>
   <% end %>
   </tbody>
