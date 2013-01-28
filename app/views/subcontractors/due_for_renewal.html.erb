@@ -3,7 +3,7 @@
 
 <%= will_paginate @sbcons %>
 
-<table class="table table-hover">
+<table class="table table-hover" id="renewal-table">
   <thead>
     <tr>
       <th>Name</th>
@@ -24,7 +24,7 @@
         <%= subcontractor.con_email %></a></td>
       <td><%= subcontractor.cscs_card %></td>
       <td><%= subcontractor.op_avail %></td>
-      <td class="renewal"><%= subcontractor.renewal_date.strftime("%d-%m-%Y") %></td>
+      <td class="renewal-cell"><%= subcontractor.renewal_date.strftime("%d-%m-%Y") %></td>
       <td><%= subcontractor.approved_status %></td>
       <td class="edit"><%= link_to "edit", edit_subcontractor_path(subcontractor), class: "btn btn-success btn-mini" %></td>
     </tr>
