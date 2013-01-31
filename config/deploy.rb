@@ -12,7 +12,7 @@ set :scm, "git"
 set :repository, "git@github.com:RyanMacG/#{application}.git"
 set :branch, "feature/deployment"
 
-default_run_option[:pty] = true
+default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" #keep only the last 5 releases
