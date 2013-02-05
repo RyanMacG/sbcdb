@@ -168,7 +168,12 @@ input, textarea, select, .uneditable-input {
   padding: 10px;
   margin-bottom: 15px;
   @include box_sizing;
+  height: 30px !important;
 }
+
+.btn-large {
+    height: auto !important;
+  }
 
 .field {
   height: auto; 
@@ -176,10 +181,6 @@ input, textarea, select, .uneditable-input {
 
 textarea {
   height: 80px;
-}
-
-input, select {
-  height: 30px !important;
 }
 
 /* edit date_selects */
