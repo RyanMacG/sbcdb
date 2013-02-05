@@ -3,7 +3,9 @@
   <aside class="span4">
     <section>
       <h1><%= @sbcon.sbcon_name %></h1>
-      <%= link_to "edit", edit_subcontractor_path, class: "btn btn-success btn-mini" %>
+      <%= link_to "edit", edit_subcontractor_path, class: "btn btn-success btn-mini" %> | 
+      <%= link_to "Index", subcontractors_path %> | 
+      <%= link_to "Subcontractors due for renewal", root_path %>
     </section>
   </aside>
 </div>

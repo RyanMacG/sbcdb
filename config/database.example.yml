@@ -1,0 +1,8 @@
+production:
+  adapter: sqlserver
+  mode: dblib
+  dataserver:
+  database: subcontractorDB
+  username:
+  password:
+  timeout: 5000

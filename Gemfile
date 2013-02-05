@@ -8,6 +8,8 @@ gem 'bootstrap-sass'
 gem 'bootstrap-datepicker-rails'
 gem 'handles_sortable_columns'
 gem 'bootstrap-will_paginate'
+gem 'unicorn'
+gem 'capistrano'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
