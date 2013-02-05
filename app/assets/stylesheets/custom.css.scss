@@ -53,6 +53,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: $grayLight;
+}
+
 #renewal-table {
   width: 100%;
 }
@@ -154,6 +158,10 @@ footer {
 
 /* forms */
 
+.required {
+  color: red;
+}
+
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 40%;
@@ -163,7 +171,7 @@ input, textarea, select, .uneditable-input {
 }
 
 .field {
-  height: auto;
+  height: auto; 
 }
 
 textarea {
@@ -171,7 +179,7 @@ textarea {
 }
 
 input, select {
-  height: auto !important;
+  height: 30px !important;
 }
 
 /* edit date_selects */
@@ -260,6 +268,10 @@ input, select {
   width: 13%;
 }
 
+.alert {
+  width: 50%;
+}
+
 #error_explanation {
   color: #f00;
   ul {
@@ -271,6 +283,10 @@ input, select {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+  input {
+    background-color: #F1CEC9;
+    color: #333333;
+  }
 }
 
 /* misc */
