@@ -2,6 +2,7 @@
 <h1>Update a subcontractor</h1>
 <div class="row">
   <div class="field offset6">
+    <p><%= link_to "Back", subcontractor_path %> | <%= link_to "Index", subcontractors_path %></p>
     <%= form_for (@subcontractor) do |f| %>
       <%= render 'shared/error_messages' %>
 
