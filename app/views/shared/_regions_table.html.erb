@@ -1,0 +1,31 @@
+<table class="table table-hover" id="regions">
+  <thead>
+    <tr>
+      <th><%= sortable_column "Name", column: "sbcon_name" %></th>
+      <th><%= sortable_column "Contact Number", column: "con_tel_num" %></th>
+      <th><%= sortable_column "CSCS", column: "cscs_card" %></th>
+      <th><%= sortable_column "Operatives", column: "op_avail" %></th>
+      <th><%= sortable_column "Product Liability", column: "ins_prod" %></th>
+      <th><%= sortable_column "Employer Liability", column: "ins_emp" %></th>
+      <th><%= sortable_column "Public Liability", column: "ins_pub" %></th>
+      <th><%= sortable_column "Contractors All Risk", column: "ins_con_all" %></th>
+      <th>Approved Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @sbcons.each do |subcontractor| %>
+    <tr>
+      <td><%= link_to subcontractor.sbcon_name, subcontractor %></td>
+      <td><%= subcontractor.con_tel_num %></td>
+      <td><%= subcontractor.cscs_card %></td>
+      <td><%= subcontractor.op_avail %></td>
+      <td><%= subcontractor.ins_prod %></td>
+      <td><%= subcontractor.ins_emp %></td>
+      <td><%= subcontractor.ins_pub %></td>
+      <td><%= subcontractor.ins_con_all %></td>
+      <td><%= subcontractor.approved_status %></td>
+      <td class="edit"><%= link_to "edit", edit_subcontractor_path(subcontractor), class: "btn btn-success btn-mini" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

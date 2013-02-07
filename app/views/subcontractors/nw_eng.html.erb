@@ -1,0 +1,9 @@
+<% provide(:title, "North West English Subcontractors") %>
+<h1>Approved Subcontractors - North West England</h1>
+
+<p><%= link_to "Clear sorting", nw_eng_path, class: "btn btn-mini" %></p>
+<%= will_paginate @sbcons %>
+
+<%= render 'shared/regions_table' %>
+
+<%= will_paginate @sbcons %>
