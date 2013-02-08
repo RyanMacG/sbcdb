@@ -1,14 +1,11 @@
-<% provide(:title, 'All Subcontractors') %>
-<h1>Subcontractors List</h1>
-
-<p><%= link_to "Clear sorting", subcontractors_path, class: "btn btn-mini" %></p>
 <%= will_paginate @sbcons %>
 
 <table class="table table-hover">
   <thead>
     <tr>
       <th><%= sortable_column "Name", column: "sbcon_name" %></th>
-      <th><%= sortable_column "Number", column: "con_tel_num" %></th>
+      <th><%= sortable_column "Contact Number", column: "con_tel_num" %></th>
+      <th>Contact Email</th>
       <th><%= sortable_column "CSCS", column: "cscs_card" %></th>
       <th><%= link_to "Scotland", scotland_path %></th>
       <th><%= link_to "NE England", ne_eng_path %></th>
@@ -23,7 +20,6 @@
       <th><%= sortable_column "Employer Liability", column: "ins_emp" %></th>
       <th><%= sortable_column "Public Liability", column: "ins_pub" %></th>
       <th><%= sortable_column "Contractors All Risk", column: "ins_con_all" %></th>
-      <th><%= sortable_column "Status", column: "approved_status" %></th>
     </tr>
   </thead>
   <tbody>
@@ -31,6 +27,7 @@
     <tr>
       <td><%= link_to subcontractor.sbcon_name, subcontractor %></td>
       <td><%= subcontractor.con_tel_num %></td>
+      <td><a href="mailto:<%= subcontractor.con_email %>"><%= subcontractor.con_email %></td>
       <td><%= subcontractor.cscs_card %></td>
       <td><%= subcontractor.scot %></td>
       <td><%= subcontractor.ne_eng %></td>
@@ -45,7 +42,6 @@
       <td><%= subcontractor.ins_emp %></td>
       <td><%= subcontractor.ins_pub %></td>
       <td><%= subcontractor.ins_con_all %></td>
-      <td><%= subcontractor.approved_status %></td>
       <td class="edit"><%= link_to "edit", edit_subcontractor_path(subcontractor), class: "btn btn-success btn-mini" %></td>
     </tr>
   <% end %>

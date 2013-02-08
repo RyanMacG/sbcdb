@@ -211,7 +211,7 @@
 
       <%= f.label :sbcon_type, "Subcontractor Type" %>
       <%= f.select :sbcon_type, options_for_select([[@subcontractor.sbcon_type],
-      ["Labour Only Subcontractor"], ["Specialist Subcontractor"], ["Both"]]) %>
+      ["Labour Only"], ["Specialist"], ["Both"]]) %>
 
       <%= f.label :rating, "Rating" %>
       <%= f.select :rating, options_for_select([[@subcontractor.rating], 
