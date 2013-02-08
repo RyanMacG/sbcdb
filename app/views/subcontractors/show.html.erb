@@ -63,7 +63,7 @@
     Amount of Cover: <%= number_to_currency(@sbcon.amnt_prod, unit: '£') %> <br>
   <% end %>
   <% if @sbcon.exp_date_prod? %>
-    Expiry Date: <%= @sbcon.exp_date_prod.strftime('%d-%m-%Y') %>
+    Expiry Date: <%= @sbcon.exp_date_prod.strftime('%d-%m-%Y') %> <br>
   <% end %>
 
   Employer Liability: <%= @sbcon.ins_emp %> <br>
@@ -124,7 +124,7 @@
 <p>
   <h5>JTC Internal</h5>
   Date Entered: <%= @sbcon.date_entered.strftime('%d-%m-%Y') %> by <%= @sbcon.initials %> <br>
-  Date renewed: <%= @sbcon.renewal_date.strftime('%d-%m-%Y') %> <br>
+  Renewal Date: <%= @sbcon.renewal_date.strftime('%d-%m-%Y') %> <br>
   Status: <%= @sbcon.approved_status %> <br>
   Subcontractor Type: <%= @sbcon.sbcon_type %> <br>
   Rating: <%= @sbcon.rating %> <br>

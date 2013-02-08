@@ -6,7 +6,7 @@
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Add subcon", new_path %></li>
-          <li><%= link_to "Subcontractors", subcontractors_path %></li>
+          <li><%= link_to "Index", subcontractors_path %></li>
           <li id="fat-menu" class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Regional - Approved <b class="caret"></b>
@@ -22,6 +22,20 @@
               <li><%= link_to "London", london_path %></li>
               <li class="divider"></li>
               <li><%= link_to "Wales", wales_path %></li>
+            </ul>
+          </li>
+          <li id="fat-menu" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Subcontractors <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Approved", approved_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Labour Only", labour_path %></li>
+              <li><%= link_to "Specialist", specialist_path %></li>
+              <li><%= link_to "Both", both_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Due for Renewal", renew_path %></li>
             </ul>
           </li>
           <li><%= link_to "Help", help_path %></li>
