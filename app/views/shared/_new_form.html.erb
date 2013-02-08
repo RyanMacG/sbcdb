@@ -191,8 +191,8 @@
       <%= f.select :approved_status, options_for_select([["Not Approved"], ["Approved"]]) %>
 
       <%= f.label :sbcon_type, "Subcontractor Type *" %>
-      <%= f.select :sbcon_type, options_for_select([["Labour Only Subcontractor"],
-                                              ["Specialist Subcontractor"], ["Both"]]) %>
+      <%= f.select :sbcon_type, options_for_select([["Labour Only"],
+                                              ["Specialist"], ["Both"]]) %>
 
       <%= f.label :rating, "Rating *" %>
       <%= f.select :rating, options_for_select([["5"], ["4"], ["3"], ["2"], ["1"]]) %>
