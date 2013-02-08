@@ -5,7 +5,6 @@ gem 'jquery-rails'
 gem 'tiny_tds'
 gem 'activerecord-sqlserver-adapter', require: false
 gem 'bootstrap-sass', '2.2.2.0'
-gem 'bootstrap-datepicker-rails'
 gem 'handles_sortable_columns'
 gem 'bootstrap-will_paginate'
 gem 'unicorn'
