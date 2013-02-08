@@ -27,6 +27,7 @@ class Subcontractor < ActiveRecord::Base
 
   validates :initials, length: { maximum: 6 }
   validates :utr_no, length: { is: 10 }
+  validates :op_avail, numericality: {only_integer: true}
 end
 # == Schema Information
 #

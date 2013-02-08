@@ -39,6 +39,10 @@ textarea {
   width: 95%;
 }
 
+.required {
+  color: red;
+}
+
 /* Typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -63,6 +67,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .renewal-cell {
   background-color: #C33D2B;
+}
+
+#type {
+  width: 100%;
 }
 
 h1 {
@@ -168,12 +176,11 @@ input, textarea, select, .uneditable-input {
   padding: 10px;
   margin-bottom: 15px;
   @include box_sizing;
-  height: 30px !important;
 }
 
-.btn-large {
-    height: auto !important;
-  }
+input, select {
+  height: auto !important;
+}
 
 .field {
   height: auto; 

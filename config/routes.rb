@@ -2,9 +2,22 @@ Sbcdb::Application.routes.draw do
 
   root to: 'subcontractors#due_for_renewal'
 
-  match 'help',  to: 'static_pages#help'
-  match 'new',   to: 'subcontractors#new'
-  match 'renew', to: 'subcontractors#due_for_renewal'
+  match 'help',       to: 'static_pages#help'
+  match 'new',        to: 'subcontractors#new'
+  match 'renew',      to: 'subcontractors#due_for_renewal'
+  match 'scotland',   to: 'subcontractors#scottish_subcons'
+  match 'ne_eng',     to: 'subcontractors#ne_eng'
+  match 'nw_eng',     to: 'subcontractors#nw_eng'
+  match 'se_eng',     to: 'subcontractors#se_eng'
+  match 'sw_eng',     to: 'subcontractors#sw_eng'
+  match 'london',     to: 'subcontractors#london'
+  match 'wales',      to: 'subcontractors#wales'
+  match 'midlands',   to: 'subcontractors#midlands'
+  match 'approved',   to: 'subcontractors#all_approved'
+  match 'labour',     to: 'subcontractors#labour'
+  match 'specialist', to: 'subcontractors#specialist'
+  match 'both',       to: 'subcontractors#both'
+
   resources :subcontractors
 
   # The priority is based upon order of creation:

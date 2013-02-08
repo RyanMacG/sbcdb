@@ -29,8 +29,7 @@ class SubcontractorsController < ApplicationController
     #     "approved_status, sbcon_name ASC"
     #   end
     # end
-    order = sortable_column_order
-    @sbcons = Subcontractor.order(order).paginate(page: params[:page]).per_page(30)
+    @sbcons = Subcontractor.order(columns).paginate(page: params[:page]).per_page(30)
   end
 
   def edit
@@ -48,6 +47,59 @@ class SubcontractorsController < ApplicationController
   end
 
   def due_for_renewal
-    @sbcons = Subcontractor.where("renewal_date <= ?", 31.days.from_now).page(params[:page]).per_page(10)
+    @sbcons = Subcontractor.where("renewal_date <= ?", 1.month.from_now).page(params[:page]).per_page(10)
+  end
+
+  def scottish_subcons
+    @sbcons = Subcontractor.where(scot: 'yes', approved_status: 'Approved').order(columns).page(params[:page])
+  end
+
+  def ne_eng
+    @sbcons = Subcontractor.where(ne_eng: 'yes', approved_status: 'Approved').order(columns).page(params[:page])
+  end
+
+  def nw_eng
+    @sbcons = Subcontractor.where(nw_eng: 'yes', approved_status: 'Approved').order(columns).page(params[:page])
+  end
+
+  def midlands
+    @sbcons = Subcontractor.where(mid: 'yes', approved_status: 'Approved').order(columns).page(params[:page])
+  end
+
+  def se_eng
+    @sbcons = Subcontractor.where(se_eng: 'yes', approved_status: 'Approved').order(columns).page(params[:page])
+  end
+
+  def sw_eng
+    @sbcons = Subcontractor.where(sw_eng: 'yes', approved_status: 'Approved').order(columns).page(params[:page])
+  end
+
+  def london
+    @sbcons = Subcontractor.where(ldn: 'yes', approved_status: 'Approved').order(columns).page(params[:page])
+  end
+
+  def wales
+    @sbcons = Subcontractor.where(wales: 'yes', approved_status: 'Approved').order(columns).page(params[:page])
+  end
+
+  def all_approved
+    @sbcons = Subcontractor.where(approved_status: 'Approved').order(columns).page(params[:page])
+  end
+
+  def labour
+    @sbcons = Subcontractor.where(sbcon_type: 'Labour Only', approved_status: 'Approved').order(columns).page(params[:page])
+  end
+
+  def specialist
+    @sbcons = Subcontractor.where(sbcon_type: 'Specialist', approved_status: 'Approved').order(columns).page(params[:page])
+  end
+
+  def both
+    @sbcons = Subcontractor.where(sbcon_type: 'Both', approved_status: 'Approved').order(columns).page(params[:page])
+  end
+
+  private
+  def columns
+    order = sortable_column_order
   end
 end

@@ -205,7 +205,7 @@ DEPENDENCIES
   activerecord-sqlserver-adapter
   annotate (~> 2.4.1.beta)
   bootstrap-datepicker-rails
-  bootstrap-sass
+  bootstrap-sass (= 2.2.2.0)
   bootstrap-will_paginate
   capistrano
   capybara (= 1.1.2)
