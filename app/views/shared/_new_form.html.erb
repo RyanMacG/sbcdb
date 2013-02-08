@@ -114,10 +114,10 @@
       (number_with_precision(@subcontractor.amnt_emp, precision: 2)) %>
 
       <%= f.label :exp_date_prod, "Expiry Date (Product)" %>
-      <%= f.text_field :exp_date_prod, class: "date" %>
+      <%= f.date_select :exp_date_prod, end_year: 20.years.from_now.year, order: [:day, :month, :year] %>
 
       <%= f.label :exp_date_emp, "Expiry Date (Employer)" %>
-      <%= f.text_field :exp_date_emp, class: "date" %>
+      <%= f.date_select :exp_date_emp, end_year: 20.years.from_now.year, order: [:day, :month, :year] %>
 
       <%= f.label :ins_pub, "Public Liability *" %>
       <%= f.select :ins_pub, options_for_select([["No"], ["Yes"]]) %>
@@ -146,10 +146,10 @@
       (number_with_precision(@subcontractor.amnt_con_all, precision: 2)) %>
 
       <%= f.label :exp_date_pub, "Expiry Date (Public)" %>
-      <%= f.text_field :exp_date_pub, class: "date" %>
+      <%= f.date_select :exp_date_pub, end_year: 20.years.from_now.year, order: [:day, :month, :year] %>
 
       <%= f.label :exp_date_con_all, "Expiry Date (Contractors)" %>
-      <%= f.text_field :exp_date_con_all, class: "date" %>
+      <%= f.date_select :exp_date_con_all, end_year: 20.years.from_now.year, order: [:day, :month, :year] %>
     </div>
 
     <h2>T&ampCs, etc.</h2>
@@ -173,16 +173,16 @@
       <%= f.text_field :signed %>
 
       <%= f.label :signed_date, "Date *" %>
-      <%= f.text_field :signed_date, class: "date" %>
+      <%= f.date_select :signed_date, order: [:day, :month, :year] %>
 
       <%= f.label :position, "Position *" %>
       <%= f.text_field :position %>
 
       <%= f.label :date_entered, "Date Entered *" %>
-      <%= f.text_field :date_entered, class: "date" %>
+      <%= f.date_select :date_entered, order: [:day, :month, :year] %>
 
       <%= f.label :renewal_date, "Renewal Date *" %>
-      <%= f.text_field :renewal_date, class: "date" %>
+      <%= f.date_select :renewal_date, order: [:day, :month, :year] %>
 
       <%= f.label :initials, "Initials *" %>
       <%= f.text_field :initials %>
