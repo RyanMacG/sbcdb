@@ -37,8 +37,7 @@
       <%= f.text_field :country %>
 
       <%= f.label :vat_reg, "VAT Registered?" %>
-      <%= f.select :vat_reg, options_for_select([[@subcontractor.vat_reg], 
-      ["No"], ["Yes"]]) %>
+      <%= f.select :vat_reg, options_for_select([["No"], ["Yes"]], @subcontractor.vat_reg) %>
 
       <%= f.label :vat_no, "VAT No." %>
       <%= f.text_field :vat_no %>
@@ -50,8 +49,7 @@
       <%= f.text_field :cr_ni_no %>
 
       <%= f.label :cscs_card, "CSCS Card?" %>
-      <%= f.select :cscs_card, options_for_select([[@subcontractor.cscs_card], 
-      ["No"], ["Yes"]]) %>
+      <%= f.select :cscs_card, options_for_select([["No"], ["Yes"]], @subcontractor.cscs_card) %>
 
       <%= f.label :op_avail, "Available Operatives" %>
       <%= f.text_field :op_avail %>
@@ -65,47 +63,37 @@
     <h2>Areas Covered:</h2>
     <div class="field offset6">
       <%= f.label :scot, "Scotland" %>
-      <%= f.select :scot, options_for_select([[@subcontractor.scot], 
-      ["No"], ["Yes"]]) %>
+      <%= f.select :scot, options_for_select([["No"], ["Yes"]], @subcontractor.scot) %>
 
       <%= f.label :ne_eng, "North East England" %>
-      <%= f.select :ne_eng, options_for_select([[@subcontractor.ne_eng], 
-      ["No"], ["Yes"]]) %>
+      <%= f.select :ne_eng, options_for_select([["No"], ["Yes"]], @subcontractor.ne_eng) %>
 
       <%= f.label :nw_eng, "North West England" %>
-      <%= f.select :nw_eng, options_for_select([[@subcontractor.nw_eng], 
-      ["No"], ["Yes"]]) %>
+      <%= f.select :nw_eng, options_for_select([["No"], ["Yes"]], @subcontractor.nw_eng) %>
 
       <%= f.label :se_eng, "South East England" %>
-      <%= f.select :se_eng, options_for_select([[@subcontractor.se_eng], 
-      ["No"], ["Yes"]]) %>
+      <%= f.select :se_eng, options_for_select([["No"], ["Yes"]], @subcontractor.se_eng) %>
 
       <%= f.label :sw_eng, "South West England" %>
-      <%= f.select :sw_eng, options_for_select([[@subcontractor.sw_eng], 
-      ["No"], ["Yes"]]) %>
+      <%= f.select :sw_eng, options_for_select([["No"], ["Yes"]], @subcontractor.sw_eng) %>
 
       <%= f.label :mid, "Midlands" %>
-      <%= f.select :mid, options_for_select([[@subcontractor.mid], 
-      ["No"], ["Yes"]]) %>
+      <%= f.select :mid, options_for_select([["No"], ["Yes"]], @subcontractor.mid) %>
 
       <%= f.label :wales, "Wales" %>
-      <%= f.select :wales, options_for_select([[@subcontractor.wales], 
-      ["No"], ["Yes"]]) %>
+      <%= f.select :wales, options_for_select([["No"], ["Yes"]], @subcontractor.wales) %>
 
       <%= f.label :ldn, "London" %>
-      <%= f.select :ldn, options_for_select([[@subcontractor.ldn], 
-      ["No"], ["Yes"]]) %>
+      <%= f.select :ldn, options_for_select([["No"], ["Yes"]], @subcontractor.ldn) %>
     </div>
 
     <h2>Insurance</h2>
       <div class="field offset6">
       <%= f.label :ins_prod, "Product Liability" %>
-      <%= f.select :ins_prod, options_for_select([[@subcontractor.ins_emp], 
-      ["No"], ["Yes"]]) %>
+      <%= f.select :ins_prod, options_for_select([["No"], ["Yes"]], @subcontractor.ins_prod) %>
 
       <%= f.label :ins_emp, "Employer Liability" %>
-      <%= f.select :ins_emp, options_for_select([[@subcontractor.ins_emp], 
-      ["No"], ["Yes"]]) %>
+      <%= f.select :ins_emp, options_for_select([["No"], ["Yes"]], @subcontractor.ins_emp) %>
 
       <%= f.label :prov_prod, "Provider (Product)" %>
       <%= f.text_field :prov_prod %>
@@ -134,10 +122,10 @@
       <%= f.date_select :exp_date_emp, end_year: 20.years.from_now.year, order: [:day, :month, :year] %>
 
       <%= f.label :ins_pub, "Public Liability" %>
-      <%= f.select :ins_pub, options_for_select([["No"], ["Yes"]]) %>
+      <%= f.select :ins_pub, options_for_select([["No"], ["Yes"]], @subcontractor.ins_pub) %>
 
       <%= f.label :ins_con_all, "Contractors All Risk" %>
-      <%= f.select :ins_con_all, options_for_select([["No"], ["Yes"]]) %>
+      <%= f.select :ins_con_all, options_for_select([["No"], ["Yes"]], @subcontractor.ins_con_all) %>
 
       <%= f.label :prov_pub, "Provider (Public)" %>
       <%= f.text_field :prov_pub %>
@@ -169,20 +157,16 @@
     <h2>T&ampCs, etc.</h2>
     <div class="field offset6">
       <%= f.label :acpt_tc, "Accept T&C" %>
-      <%= f.select :acpt_tc, options_for_select([[@subcontractor.acpt_tc],
-        ["No"], ["Yes"]]) %>
+      <%= f.select :acpt_tc, options_for_select([["No"], ["Yes"]], @subcontractor.acpt_tc) %>
 
       <%= f.label :hs_pol, "Health & Safety Policy" %>
-      <%= f.select :hs_pol, options_for_select([[@subcontractor.hs_pol],
-        ["No"], ["Yes"], ["Use JTC's"]]) %>
+      <%= f.select :hs_pol, options_for_select([["No"], ["Yes"], ["Use JTCs"]], @subcontractor.hs_pol) %>
 
       <%= f.label :meth_state, "Method Statements" %>
-      <%= f.select :meth_state, options_for_select([[@subcontractor.meth_state],
-      ["No"], ["Yes"], ["Use JTC's"]]) %>
+      <%= f.select :meth_state, options_for_select([["No"], ["Yes"], ["Use JTCs"]], @subcontractor.meth_state) %>
 
       <%= f.label :risk_ass, "Risk Assements" %>
-      <%= f.select :risk_ass, options_for_select([[@subcontractor.risk_ass],
-      ["No"], ["Yes"], ["Use JTC's"]]) %>
+      <%= f.select :risk_ass, options_for_select([["No"], ["Yes"], ["Use JTCs"]], @subcontractor.risk_ass) %>
 
       <%= f.label :comments, "Additional Comments" %>
       <%= f.text_area :comments %>
@@ -206,23 +190,19 @@
       <%= f.text_field :initials %>
 
       <%= f.label :approved_status, "Subcontractor Status" %>
-      <%= f.select :approved_status, options_for_select([[@subcontractor.approved_status], 
-      ["Approved"], ["Not Approved"]]) %>
+      <%= f.select :approved_status, options_for_select([["Not Approved"], ["Approved"]], @subcontractor.approved_status) %>
 
       <%= f.label :sbcon_type, "Subcontractor Type" %>
-      <%= f.select :sbcon_type, options_for_select([[@subcontractor.sbcon_type],
-      ["Labour Only"], ["Specialist"], ["Both"]]) %>
+      <%= f.select :sbcon_type, options_for_select([["Labour Only"], ["Specialist"], ["Both"]], @subcontractor.sbcon_type) %>
 
       <%= f.label :rating, "Rating" %>
-      <%= f.select :rating, options_for_select([[@subcontractor.rating], 
-      ["5"], ["4"], ["3"], ["2"], ["1"]]) %>
+      <%= f.select :rating, options_for_select([["1"], ["2"], ["3"], ["4"], ["5"]], @subcontractor.rating) %>
 
       <%= f.label :cis_ver_no, "CIS Verification No." %>
       <%= f.text_field :cis_ver_no %>
 
       <%= f.label :cis_stat, "CIS Status" %>
-      <%= f.select :cis_stat, options_for_select([[@subcontractor.cis_stat],
-      ["0.00%"], ["20.00%"]]) %>
+      <%= f.select :cis_stat, options_for_select([["0.00%"], ["20.00%"]], @subcontractor.cis_stat) %>
 
       <%= f.label :jtc_comm, "JTC Comments" %>
       <%= f.text_area :jtc_comm %>
