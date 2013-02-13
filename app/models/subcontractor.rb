@@ -22,12 +22,13 @@ class Subcontractor < ActiveRecord::Base
   validates :con_email, format: { with: VALID_EMAIL_REGEX }
 
   VALID_PHONE_REGEX = /\A[0]\d{10}\z/
-  validates :con_tel_num, length: { is: 11 },
-                          format: { with: VALID_PHONE_REGEX }
+  validates :con_tel_num, format: { with: VALID_PHONE_REGEX }
 
   validates :initials, length: { maximum: 6 }
   validates :utr_no, length: { is: 10 }
   validates :op_avail, numericality: {only_integer: true}
+  validates :hr_rate_fitter, numericality: {only_integer: true}
+  validates :hr_rate_other, numericality: {only_integer: true}
 end
 # == Schema Information
 #
