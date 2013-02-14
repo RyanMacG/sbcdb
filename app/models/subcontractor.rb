@@ -24,11 +24,16 @@ class Subcontractor < ActiveRecord::Base
   VALID_PHONE_REGEX = /\A[0]\d{10}\z/
   validates :con_tel_num, format: { with: VALID_PHONE_REGEX }
 
+  validates_numericality_of :amnt_prod, if: :amnt_prod?, only_float: true
+  validates_numericality_of :amnt_emp, if: :amnt_emp?, only_float: true
+  validates_numericality_of :amnt_pub, if: :amnt_pub?, only_float: true
+  validates_numericality_of :amnt_con_all, if: :amnt_con_all?, only_float: true
+
   validates :initials, length: { maximum: 6 }
   validates :utr_no, length: { is: 10 }
   validates :op_avail, numericality: {only_integer: true}
-  validates :hr_rate_fitter, numericality: {only_integer: true}
-  validates :hr_rate_other, numericality: {only_integer: true}
+  validates :hr_rate_fitter, numericality: {only_float: true}
+  validates :hr_rate_other, numericality: {only_float: true}
 end
 # == Schema Information
 #
