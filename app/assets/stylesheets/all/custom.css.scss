@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* index */
 .table {
-  width: auto;
+  width: 100%;
   th, td {
     text-align: center;
   }
@@ -61,16 +61,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: $grayLight;
 }
 
-#renewal-table {
-  width: 100%;
-}
-
 .renewal-cell {
   background-color: #C33D2B;
-}
-
-#type {
-  width: 100%;
 }
 
 h1 {
