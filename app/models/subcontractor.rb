@@ -21,9 +21,6 @@ class Subcontractor < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :con_email, format: { with: VALID_EMAIL_REGEX }
 
-  VALID_PHONE_REGEX = /\A[0]\d{10}\z/
-  validates :con_tel_num, format: { with: VALID_PHONE_REGEX }
-
   validates_numericality_of :amnt_prod, if: :amnt_prod?, only_float: true
   validates_numericality_of :amnt_emp, if: :amnt_emp?, only_float: true
   validates_numericality_of :amnt_pub, if: :amnt_pub?, only_float: true
