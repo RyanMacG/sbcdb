@@ -191,7 +191,7 @@
       <%= f.date_select :date_entered, order: [:day, :month, :year] %>
 
       <%= f.label :renewal_date, "Renewal Date *" %>
-      <%= f.date_select :renewal_date, order: [:day, :month, :year] %>
+      <%= f.date_select :renewal_date, default: 1.year.from_now, order: [:day, :month, :year] %>
 
       <%= f.label :initials, "Initials *" %>
       <%= f.text_field :initials %>

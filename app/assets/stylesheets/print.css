@@ -13,7 +13,7 @@
 
 /* print.css */
 body {line-height:1.5;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;color:#000;background:none;font-size:10pt;}
-.container {background:none;}
+.container {background:none;padding-top:0;margin-top:0;}
 hr {background:#ccc;color:#ccc;width:100%;height:2px;margin:2em 0;padding:0;border:none;}
 hr.space {background:#fff;color:#fff;visibility:hidden;}
 h1, h2, h3, h4, h5, h6 {font-family:"Helvetica Neue", Arial, "Lucida Grande", sans-serif;}
@@ -30,3 +30,6 @@ a:link, a:visited {background:transparent;font-weight:700;text-decoration:none;c
 .navbar{visibility:hidden;height:1px;}
 #logo{visibility:hidden;}
 .btn{visibility:hidden;}
+.links{visibility:hidden;}
+#links{visibility:hidden;height:1px;width: 1px;}
+aside{height:1px;}
