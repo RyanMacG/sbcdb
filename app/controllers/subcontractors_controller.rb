@@ -1,5 +1,9 @@
 class SubcontractorsController < ApplicationController
-  handles_sortable_columns
+  handles_sortable_columns do |conf|
+    conf.sort_param = "s"
+    conf.page_param = "p"
+  end
+  
   def new
     @subcontractor = Subcontractor.new
   end
