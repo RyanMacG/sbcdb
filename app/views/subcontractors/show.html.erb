@@ -1,5 +1,5 @@
 <% provide(:title, @sbcon.sbcon_name) %>
-<div class="row">
+<div class="row" id="links">
   <aside class="span4">
     <section>
       <h1><%= @sbcon.sbcon_name %></h1>
@@ -9,128 +9,265 @@
     </section>
   </aside>
 </div>
-<p>
-  <h5>Contact Details:</h5>
-  <%= @sbcon.con_name %> | <a href="mailto:<%= @sbcon.con_email %>">
-  <%= @sbcon.con_email %></a> <br>
-  <%= @sbcon.con_tel_num %></p>
-<p>
-  <h5>Address:</h5>
-  <%= @sbcon.address1 %> <br>
+<br>
+<table class="subcon">
+  <tr><td><strong>Contact Details:</strong></td></tr>
+  <tr><td><%= @sbcon.con_name %> | <a href="mailto:<%= @sbcon.con_email %>"> <%= @sbcon.con_email %></a></td></tr>
+  <tr><td><%= @sbcon.con_tel_num %></td></tr>
+  <tr><td><br></td></tr>
+  <tr><td><strong>Address:</strong></td></tr>
+  <tr><td><%= @sbcon.address1 %></td></tr>
   <% if @sbcon.address2? %>
-    <%= @sbcon.address2 %><br>
+    <tr><td><%= @sbcon.address2 %></td></tr>
   <% end %>
-  <%= @sbcon.city %> <br>
+  <tr><td><%= @sbcon.city %></td></tr>
   <% if @sbcon.county? %>
-    <%= @sbcon.county %><br>
+    <tr><td><%= @sbcon.county %></td></tr>
   <% end %>
-  <%= @sbcon.postcode %><br>
-  <%= @sbcon.country %>
-</p>
-<p>
-  <h5>Staff Details:</h5>
-  Available Staff: <%= @sbcon.op_avail %> <br>
-  Hourly Rate (Fitter): <%= number_to_currency(@sbcon.hr_rate_fitter, unit: '£') %> <br>
-  Hourly Rate (Other): <%= number_to_currency(@sbcon.hr_rate_other, unit: '£') %>
-</p>
-<p>
-  <h5>Areas Available:</h5>
-  Scotland: <%= @sbcon.scot %> <br>
-  North East England: <%= @sbcon.ne_eng %> <br>
-  North West England: <%= @sbcon.nw_eng %> <br>
-  Midlands <%= @sbcon.mid %> <br>
-  South East England: <%= @sbcon.se_eng %> <br>
-  South West England: <%= @sbcon.sw_eng %> <br>
-  London: <%= @sbcon.ldn %> <br>
-  Wales: <%= @sbcon.wales %>
-</p>
-<p>
-  <h5>VAT, etc:</h5>
-  UTR Number: <%= @sbcon.utr_no %> <br>
-  CR/NI Number: <%= @sbcon.cr_ni_no %> <br>
-  CSCS Cards: <%= @sbcon.cscs_card %>
-</p>
-<p>
-  <h5>Insurance:</h5>
-  Product Liability: <%= @sbcon.ins_prod %> <br>
+  <tr><td><%= @sbcon.postcode %></td></tr>
+  <tr><td><%= @sbcon.country %></td></tr>
+  <tr><td><strong>Staff Details:</strong></td></tr>
+  <tr><td>Available Staff:</td><td class="number"><%= @sbcon.op_avail %></td></tr>
+  <tr>
+    <td>Hourly Rate (Fitter):</td>
+    <td class="number"><%= number_to_currency(@sbcon.hr_rate_fitter, unit: '£') %></td>
+  </tr>
+  <tr>
+    <td>Hourly Rate (Other):</td>
+    <td class="number"><%= number_to_currency(@sbcon.hr_rate_other, unit: '£') %></td>
+  </tr>
+  <tr><td><br></td></tr>
+  <tr><td><strong>Areas Available:</strong></td></tr>
+  <tr>
+    <td>Scotland:</td>
+    <td><%= @sbcon.scot %></td>
+  </tr>
+  <tr>
+    <td>North East England:</td>
+    <td><%= @sbcon.ne_eng %></td>
+  </tr>
+  <tr>
+    <td>North West England:</td>
+    <td><%= @sbcon.nw_eng %></td>
+  </tr>
+  <tr>
+    <td>Midlands:</td>
+    <td><%= @sbcon.mid %></td>
+  </tr>
+  <tr>
+    <td>South East England:</td>
+    <td><%= @sbcon.se_eng %></td>
+  </tr>
+  <tr>
+    <td>South West England:</td>
+    <td><%= @sbcon.sw_eng %></td>
+  </tr>
+  <tr>
+    <td>London:</td>
+    <td><%= @sbcon.ldn %></td>
+  </tr>
+  <tr>
+    <td>Wales:</td>
+    <td><%= @sbcon.wales %></td>
+  </tr>
+  <tr><td><br></td></tr>
+  <tr><td><strong>VAT, etc:</strong></td></tr>
+  <tr>
+    <td>UTR Number:</td>
+    <td><%= @sbcon.utr_no %></td>
+  </tr>
+  <tr>
+    <td>CR/NI Number:</td>
+    <td><%= @sbcon.cr_ni_no %></td>
+  </tr>
+  <tr>
+    <td>CSCS Cards:</td>
+    <td><%= @sbcon.cscs_card %></td>
+  </tr>
+  <tr><td><br></td></tr>
+  <tr><td><strong>Insurance:</strong></td></tr>
+  <tr>
+    <td><strong>Product Liability</strong>:</td>
+    <td><%= @sbcon.ins_prod %></td>
+  </tr>
   <% if @sbcon.prov_prod? %>
-    Provider: <%= @sbcon.prov_prod %> <br>
+    <tr>
+      <td>Provider:</td>
+      <td><%= @sbcon.prov_prod %></td>
+    </tr>
   <% end %>
   <% if @sbcon.ref_prod? %>
-    Refence Number: <%= @sbcon.ref_prod %> <br>
+    <tr>
+      <td>Reference Number:</td>
+      <td><%= @sbcon.ref_prod %></td>
+    </tr>
   <% end %>
   <% if @sbcon.amnt_prod? %>
-    Amount of Cover: <%= number_to_currency(@sbcon.amnt_prod, unit: '£') %> <br>
+    <tr>
+      <td>Cover Amount:</td>
+      <td><%= number_to_currency(@sbcon.amnt_prod, unit: '£') %></td>
+    </tr>
   <% end %>
   <% if @sbcon.exp_date_prod? %>
-    Expiry Date: <%= @sbcon.exp_date_prod.strftime('%d-%m-%Y') %> <br>
+    <tr>
+      <td>Expiry Date:</td>
+      <td><%= @sbcon.exp_date_prod.strftime('%d-%m-%Y') %></td>
+    </tr>
   <% end %>
-
-  Employer Liability: <%= @sbcon.ins_emp %> <br>
+  <tr>
+    <td><strong>Employer Liability</strong>:</td>
+    <td><%= @sbcon.ins_emp %></td>
+  </tr>
   <% if @sbcon.prov_emp? %>
-    Provider: <%= @sbcon.prov_emp %> <br>
+    <tr>
+      <td>Provider:</td>
+      <td><%= @sbcon.prov_emp %></td>
+    </tr>
   <% end %>
   <% if @sbcon.ref_emp? %>
-    Refence Number: <%= @sbcon.ref_emp %> <br>
+    <tr>
+      <td>Reference:</td>
+      <td><%= @sbcon.ref_emp %></td>
+    </tr>
   <% end %>
   <% if @sbcon.amnt_emp? %>
-    Amount of Cover: <%= number_to_currency(@sbcon.amnt_emp, unit: '£') %> <br>
+    <tr>
+      <td>Cover Amount:</td>
+      <td><%= number_to_currency(@sbcon.amnt_emp, unit: '£') %></td>
+    </tr>
   <% end %>
   <% if @sbcon.exp_date_emp? %>
-    Expiry Date: <%= @sbcon.exp_date_emp.strftime('%d-%m-%Y') %> <br>
+    <tr>
+      <td>Expiry Date:</td>
+      <td><%= @sbcon.exp_date_emp.strftime('%d-%m-%Y') %></td>
+    </tr>
   <% end %>
-
-  Public Liability: <%= @sbcon.ins_pub %> <br>
+  <tr>
+    <td><strong>Public Liability:</strong></td>
+    <td><%= @sbcon.ins_pub %></td>
+  </tr>
   <% if @sbcon.prov_pub? %>
-    Provider: <%= @sbcon.prov_pub %> <br>
+    <tr>
+      <td>Provider:</td>
+      <td><%= @sbcon.prov_pub %></td>
+    </tr>
   <% end %>
   <% if @sbcon.ref_pub? %>
-    Refence Number: <%= @sbcon.ref_emp %> <br>
+    <tr>
+      <td>Reference:</td>
+      <td><%= @sbcon.ref_pub %></td>
+    </tr>
   <% end %>
   <% if @sbcon.amnt_pub? %>
-    Amount of Cover: <%= number_to_currency(@sbcon.amnt_pub, unit: '£') %> <br>
+    <tr>
+      <td>Cover Amount:</td>
+      <td><%= number_to_currency(@sbcon.amnt_pub, unit: '£') %></td>
+    </tr>
   <% end %>
   <% if @sbcon.exp_date_pub? %>
-    Expiry Date: <%= @sbcon.exp_date_pub.strftime('%d-%m-%Y') %> <br>
+    <tr>
+      <td>Expiry Date:</td>
+      <td><%= @sbcon.exp_date_pub.strftime('%d-%m-%Y') %></td>
+    </tr>
   <% end %>
-
-  Contractors All Risk: <%= @sbcon.ins_con_all %> <br>
+  <tr>
+    <td><strong>Contractors All Risk</strong>:</td>
+    <td><%= @sbcon.ins_con_all %></td>
+  </tr>
   <% if @sbcon.prov_con_all? %>
-    Provider: <%= @sbcon.prov_con_all %> <br>
+    <tr>
+      <td>Provider:</td>
+      <td><%= @sbcon.prov_con_all %></td>
+    </tr>
   <% end %>
   <% if @sbcon.ref_con_all? %>
-    Refence Number: <%= @sbcon.ref_con_all %> <br>
+    <tr>
+      <td>Reference:</td>
+      <td><%= @sbcon.ref_con_all %></td>
+    </tr>
   <% end %>
   <% if @sbcon.amnt_con_all? %>
-    Amount of Cover: <%= number_to_currency(@sbcon.amnt_con_all, unit: '£') %> <br>
+    <tr>
+      <td>Cover Amount:</td>
+      <td><%= number_to_currency(@sbcon.amnt_con_all, unit: '£') %></td>
+    </tr>
   <% end %>
   <% if @sbcon.exp_date_con_all? %>
-    Expiry Date: <%= @sbcon.exp_date_con_all.strftime('%d-%m-%Y') %> <br>
+    <tr>
+      <td>Expiry Date:</td>
+      <td><%= @sbcon.exp_date_con_all.strftime('%d-%m-%Y') %></td>
+    </tr>
   <% end %>
-</p>
-<p>
-  <h5>T&ampCs, etc.</h5>
-  Accepted T&ampC: <%= @sbcon.acpt_tc %> <br>
-  Health &amp Safety Policy: <%= @sbcon.hs_pol %> <br>
-  Method Statements: <%= @sbcon.meth_state %> <br>
-  Risk Assessments: <%= @sbcon.risk_ass %> <br>
-  <br>
+  <tr><td><br></td></tr>
+  <tr><td><strong>T&ampCs, etc.</strong></td></tr>
+  <tr>
+    <td>Accepted T&ampC:</td>
+    <td><%= @sbcon.acpt_tc %></td>
+  </tr>
+  <tr>
+    <td>Health &amp Safety Policy:</td>
+    <td><%= @sbcon.hs_pol %></td>
+  </tr>
+  <tr>
+    <td>Method Statements:</td>
+    <td><%= @sbcon.meth_state %></td>
+  </tr>
+  <tr>
+    <td>Risk Assessments:</td>
+    <td><%= @sbcon.risk_ass %></td>
+  </tr>
   <% if @sbcon.comments? %>
-    Additional Comments:<%= @sbcon.comments %> <br>
+    <tr>
+      <td>Additional Comments:</td>
+      <td><%= @sbcon.comments %></td>
+    </tr>
   <% end %>
-  Signed by: <%= @sbcon.signed %> on <%= @sbcon.signed_date.strftime('%d-%m-%Y') %> <br>
-  Position: <%= @sbcon.position %>
-</p>
-<p>
-  <h5>JTC Internal</h5>
-  Date Entered: <%= @sbcon.date_entered.strftime('%d-%m-%Y') %> by <%= @sbcon.initials %> <br>
-  Renewal Date: <%= @sbcon.renewal_date.strftime('%d-%m-%Y') %> <br>
-  Status: <%= @sbcon.approved_status %> <br>
-  Subcontractor Type: <%= @sbcon.sbcon_type %> <br>
-  Rating: <%= @sbcon.rating %> <br>
-  CIS Verification Number: <%= @sbcon.cis_ver_no %> <br>
-  CIS Status: <%= @sbcon.cis_stat %> <br>
+  <tr>
+    <td>Signed by:</td>
+    <td><%= @sbcon.signed %> on <%= @sbcon.signed_date.strftime('%d-%m-%Y') %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Position:</td>
+    <td><%= @sbcon.position %></td>
+  </tr>
+  <tr><td><br></td></tr>
+  <tr><td><strong>JTC Internal</strong></td></tr>
+  <tr>
+    <td>Date Entered:</td>
+    <td><%= @sbcon.date_entered.strftime('%d-%m-%Y') %> by <%= @sbcon.initials %></td>
+  </tr>
+  <tr>
+    <td>Renewal Date:</td>
+    <td><%= @sbcon.renewal_date.strftime('%d-%m-%Y') %></td>
+  </tr>
+  <tr>
+    <td>Status:</td>
+    <td><%= @sbcon.approved_status %></td>
+  </tr>
+  <tr>
+    <td>Subcontractor Type:</td>
+    <td><%= @sbcon.sbcon_type %></td>
+  </tr>
+  <tr>
+    <td>Rating:</td>
+    <td ><%= @sbcon.rating %></td>
+  </tr>
+  <tr>
+    <td>CIS Verification Number:</td>
+    <td ><%= @sbcon.cis_ver_no %></td>
+  </tr>
+  <tr>
+    <td>CIS Status</td>
+    <td ><%= @sbcon.cis_stat %></td>
+  </tr>
   <% if @sbcon.jtc_comm? %>
-    JTC Comments: <%= @sbcon.jtc_comm %>
+    <tr>
+      <td>JTC Comments:</td>
+      <td><%= @sbcon.jtc_comm %></td>
+    </tr>
   <% end %>
-</p>
+</table>
