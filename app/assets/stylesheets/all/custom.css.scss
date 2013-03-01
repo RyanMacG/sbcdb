@@ -49,25 +49,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-.number {
-  float:right;
-}
-/* index */
-.table {
-  width: 100%;
-  th, td {
-    text-align: center;
-  }
-}
-
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-  background-color: $grayLight;
-}
-
-.renewal-cell {
-  background-color: #C33D2B;
-}
-
 h1 {
   font-size: 3em;
   letter-spacing: -1px;
@@ -98,6 +79,32 @@ h3 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+/* index */
+.table {
+  width: 100%;
+  th, td {
+    text-align: center;
+  }
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: $grayLight;
+}
+
+.renewal-cell {
+  background-color: #C33D2B;
+}
+
+/*show*/
+.subcon td {
+  width: 150px;
+  padding-right: 3px;
+}
+
+.number {
+  text-align:right;
 }
 
 /* header */
