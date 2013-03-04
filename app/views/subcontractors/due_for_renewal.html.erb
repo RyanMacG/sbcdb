@@ -1,6 +1,8 @@
 <% provide(:title, "Due for Renewal") %>
 <h1>Subcontractors due for renewal</h1>
 
+<% if @sbcons.any? %>
+
 <%= will_paginate @sbcons %>
 
 <table class="table table-hover" id="renewal-table">
@@ -33,3 +35,9 @@
 </table>
 
 <%= will_paginate @sbcons %>
+
+<% else %>
+<div class="center hero-unit">
+  <p>There are no subcontractors due for renewal!</p>
+</div>
+<% end %>
