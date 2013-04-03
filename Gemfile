@@ -25,6 +25,7 @@ group :development, :test do
   gem 'spork'
   gem 'annotate', '~> 2.4.1.beta'
   gem 'pg'
+  gem 'meta_request'
 end
 
 group :test do
