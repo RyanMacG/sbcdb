@@ -3,13 +3,14 @@
 
 <p><%= link_to "Clear sorting", subcontractors_path, class: "btn btn-mini" %></p>
 <%= will_paginate @sbcons %>
-
+<%= render 'shared/subcon_total'%>
 <table class="table table-hover">
   <thead>
     <tr>
       <th><%= sortable_column "Name", column: "sbcon_name" %></th>
       <th><%= sortable_column "Contact Number", column: "con_tel_num" %></th>
       <th><%= sortable_column "CSCS", column: "cscs_card" %></th>
+      <th>Type</th>
       <th><%= link_to "Scotland", scotland_path %></th>
       <th><%= link_to "NE England", ne_eng_path %></th>
       <th><%= link_to "NW England", nw_eng_path %></th>
@@ -32,6 +33,7 @@
       <td><%= link_to subcontractor.sbcon_name, subcontractor %></td>
       <td><%= subcontractor.con_tel_num %></td>
       <td><%= subcontractor.cscs_card %></td>
+      <td><%= subcontractor.sbcon_type %></td>
       <td><%= subcontractor.scot %></td>
       <td><%= subcontractor.ne_eng %></td>
       <td><%= subcontractor.nw_eng %></td>
