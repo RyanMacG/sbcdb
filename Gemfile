@@ -24,6 +24,7 @@ group :development, :test do
   gem 'guard-spork'
   gem 'spork'
   gem 'annotate', '~> 2.4.1.beta'
+  gem 'pg'
 end
 
 group :test do

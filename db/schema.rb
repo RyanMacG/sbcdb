@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(:version => 20130110145800) do
     t.string   "vat_no"
     t.string   "cscs_card"
     t.string   "op_avail"
-    t.float    "hr_rate_fitter",   :limit => 24
-    t.float    "hr_rate_other",    :limit => 24
+    t.float    "hr_rate_fitter"
+    t.float    "hr_rate_other"
     t.string   "scot"
     t.string   "ne_eng"
     t.string   "nw_eng"
@@ -77,8 +77,8 @@ ActiveRecord::Schema.define(:version => 20130110145800) do
     t.string   "cis_ver_no"
     t.string   "cis_stat"
     t.string   "jtc_comm"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end
