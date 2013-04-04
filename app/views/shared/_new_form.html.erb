@@ -211,6 +211,9 @@
       <%= f.label :cis_stat, "CIS Status *" %>
       <%= f.select :cis_stat, options_for_select([["0.00%"], ["20.00%"]], @subcontractor.cis_stat) %>
 
+      <%= f.label :customer_code, 'Dimensions Customer Code' %>
+      <%= f.text_field :customer_code %>
+
       <%= f.label :jtc_comm, "JTC Comments" %>
       <%= f.text_area :jtc_comm %>
     </div>

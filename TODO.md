@@ -5,7 +5,7 @@ ___
 - ~~Number of subcontractors - Kevin~~
 - ~~Fix number allignment~~
 - ~~Fix cell width~~
-- Dimension Customer code for subcontractor (new input, Kevin) - Tommy
+- ~~Dimension Customer code for subcontractor (new input, Kevin) - Tommy~~
 - Last year report (Leanne current) - Tommy
 - Turnover last year total, quarterly current - Tommy
 - Insurance renewal report - 1 month before - Tommy
