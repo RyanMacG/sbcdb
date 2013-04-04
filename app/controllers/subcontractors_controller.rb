@@ -96,7 +96,7 @@ class SubcontractorsController < ApplicationController
   def columns
     sortable_column_order do |column, direction|
       case column
-      when "con_tel_num", "cscs_card", "op_avail", "ins_emp", "ins_prod", "ins_pub", "ins_con_all"
+      when "sbcon_name", "cscs_card", "op_avail", "ins_emp", "ins_prod", "ins_pub", "ins_con_all"
         "#{column} #{direction}"
       else
         "sbcon_name ASC"
