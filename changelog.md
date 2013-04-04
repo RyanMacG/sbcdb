@@ -7,5 +7,8 @@ ___
 - Subcontractors are now sorted by name by default
 - Operative sorting changed to int - Mark
 - Added Subcontractor Type to relevant tables
+- Added Subcontractor count to index
+- Added 'Viewing subcontractor x of y' to show page
+- Removed 'Contact Number' as sortable column
 
 ___
