@@ -1,8 +1,14 @@
 <% provide(:title, @sbcon.sbcon_name) %>
+<p>Viewing Subcontractor <%= @sbcon.id %> of <%=  Subcontractor.count%> </p>
 <div class="row" id="links">
   <aside class="span4">
     <section>
       <h1><%= @sbcon.sbcon_name %></h1>
+      <% if @sbcon.customer_code? %>
+        <h5><%= @sbcon.customer_code %></h2>
+      <% else %>
+        <h5>No Dimensions code entered</h2>
+      <% end %>
       <%= link_to "edit", edit_subcontractor_path, class: "btn btn-success btn-mini" %> | 
       <%= link_to "Index", subcontractors_path %> | 
       <%= link_to "Subcontractors due for renewal", root_path %>
@@ -27,14 +33,14 @@
   <tr><td><%= @sbcon.postcode %></td></tr>
   <tr><td><%= @sbcon.country %></td></tr>
   <tr><td><strong>Staff Details:</strong></td></tr>
-  <tr><td>Available Staff:</td><td class="number"><%= @sbcon.op_avail %></td></tr>
+  <tr><td>Available Staff:</td><td><%= @sbcon.op_avail %></td></tr>
   <tr>
     <td>Hourly Rate (Fitter):</td>
-    <td class="number"><%= number_to_currency(@sbcon.hr_rate_fitter, unit: '£') %></td>
+    <td><%= number_to_currency(@sbcon.hr_rate_fitter, unit: '£') %></td>
   </tr>
   <tr>
     <td>Hourly Rate (Other):</td>
-    <td class="number"><%= number_to_currency(@sbcon.hr_rate_other, unit: '£') %></td>
+    <td><%= number_to_currency(@sbcon.hr_rate_other, unit: '£') %></td>
   </tr>
   <tr><td><br></td></tr>
   <tr><td><strong>Areas Available:</strong></td></tr>

@@ -1,0 +1,183 @@
+<%= provide(:title, 'Dashboard') %>
+<h1>Dashboard</h1>
+<br />
+<h2>Subcontractors with Insurance due to expire</h2>
+<% if @sbcon_ins_prod.any? %>
+  <h3>Product Insurance</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><%= sortable_column "Name", column: "sbcon_name" %></th>
+        <th>Contact Number</th>
+        <th>Type</th>
+        <th><%= link_to "Scotland", scotland_path %></th>
+        <th><%= link_to "NE England", ne_eng_path %></th>
+        <th><%= link_to "NW England", nw_eng_path %></th>
+        <th><%= link_to "Midlands", midlands_path %></th>
+        <th><%= link_to "SE England", se_eng_path %></th>
+        <th><%= link_to "SW England", sw_eng_path %></th>
+        <th><%= link_to "London", london_path %></th>
+        <th><%= link_to "Wales", wales_path %></th>
+        <th><%= link_to "Expiry Date", column: "exp_date_prod" %></th>
+        <th><%= sortable_column "Operatives", column: "op_avail" %></th>
+        <th><%= sortable_column "Status", column: "approved_status" %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @sbcon_ins_prod.each do |subcontractor| %>
+      <tr>
+        <td><%= link_to subcontractor.sbcon_name, subcontractor %></td>
+        <td><%= subcontractor.con_tel_num %></td>
+        <td><%= subcontractor.sbcon_type %></td>
+        <td><%= subcontractor.scot %></td>
+        <td><%= subcontractor.ne_eng %></td>
+        <td><%= subcontractor.nw_eng %></td>
+        <td><%= subcontractor.mid %></td>
+        <td><%= subcontractor.se_eng %></td>
+        <td><%= subcontractor.sw_eng %></td>
+        <td><%= subcontractor.ldn %></td>
+        <td><%= subcontractor.wales %></td>
+        <td><%= subcontractor.exp_date_prod.strftime('%d-%m-%y') %></td>
+        <td><%= subcontractor.op_avail %></td>
+        <td><%= subcontractor.approved_status %></td>
+        <td class="edit"><%= link_to "edit", edit_subcontractor_path(subcontractor), class: "btn btn-success btn-mini" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
+<br />
+<% if @sbcon_ins_emp.any? %>
+  <h3>Employer Liability</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><%= sortable_column "Name", column: "sbcon_name" %></th>
+        <th>Contact Number</th>
+        <th>Type</th>
+        <th><%= link_to "Scotland", scotland_path %></th>
+        <th><%= link_to "NE England", ne_eng_path %></th>
+        <th><%= link_to "NW England", nw_eng_path %></th>
+        <th><%= link_to "Midlands", midlands_path %></th>
+        <th><%= link_to "SE England", se_eng_path %></th>
+        <th><%= link_to "SW England", sw_eng_path %></th>
+        <th><%= link_to "London", london_path %></th>
+        <th><%= link_to "Wales", wales_path %></th>
+        <th><%= link_to "Expiry Date", column: "exp_date_emp" %></th>
+        <th><%= sortable_column "Operatives", column: "op_avail" %></th>
+        <th><%= sortable_column "Status", column: "approved_status" %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @sbcon_ins_emp.each do |subcontractor| %>
+      <tr>
+        <td><%= link_to subcontractor.sbcon_name, subcontractor %></td>
+        <td><%= subcontractor.con_tel_num %></td>
+        <td><%= subcontractor.sbcon_type %></td>
+        <td><%= subcontractor.scot %></td>
+        <td><%= subcontractor.ne_eng %></td>
+        <td><%= subcontractor.nw_eng %></td>
+        <td><%= subcontractor.mid %></td>
+        <td><%= subcontractor.se_eng %></td>
+        <td><%= subcontractor.sw_eng %></td>
+        <td><%= subcontractor.ldn %></td>
+        <td><%= subcontractor.wales %></td>
+        <td><%= subcontractor.exp_date_emp.strftime('%d-%m-%y') %></td>
+        <td><%= subcontractor.op_avail %></td>
+        <td><%= subcontractor.approved_status %></td>
+        <td class="edit"><%= link_to "edit", edit_subcontractor_path(subcontractor), class: "btn btn-success btn-mini" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
+<br />
+<% if @sbcon_ins_pub.any? %>
+  <h3>Product Liability</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><%= sortable_column "Name", column: "sbcon_name" %></th>
+        <th>Contact Number</th>
+        <th>Type</th>
+        <th><%= link_to "Scotland", scotland_path %></th>
+        <th><%= link_to "NE England", ne_eng_path %></th>
+        <th><%= link_to "NW England", nw_eng_path %></th>
+        <th><%= link_to "Midlands", midlands_path %></th>
+        <th><%= link_to "SE England", se_eng_path %></th>
+        <th><%= link_to "SW England", sw_eng_path %></th>
+        <th><%= link_to "London", london_path %></th>
+        <th><%= link_to "Wales", wales_path %></th>
+        <th><%= link_to "Expiry Date", column: "exp_date_pub" %></th>
+        <th><%= sortable_column "Operatives", column: "op_avail" %></th>
+        <th><%= sortable_column "Status", column: "approved_status" %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @sbcon_ins_pub.each do |subcontractor| %>
+      <tr>
+        <td><%= link_to subcontractor.sbcon_name, subcontractor %></td>
+        <td><%= subcontractor.con_tel_num %></td>
+        <td><%= subcontractor.sbcon_type %></td>
+        <td><%= subcontractor.scot %></td>
+        <td><%= subcontractor.ne_eng %></td>
+        <td><%= subcontractor.nw_eng %></td>
+        <td><%= subcontractor.mid %></td>
+        <td><%= subcontractor.se_eng %></td>
+        <td><%= subcontractor.sw_eng %></td>
+        <td><%= subcontractor.ldn %></td>
+        <td><%= subcontractor.wales %></td>
+        <td><%= subcontractor.exp_date_pub.strftime('%d-%m-%y') %></td>
+        <td><%= subcontractor.op_avail %></td>
+        <td><%= subcontractor.approved_status %></td>
+        <td class="edit"><%= link_to "edit", edit_subcontractor_path(subcontractor), class: "btn btn-success btn-mini" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
+<br />
+<% if @sbcon_ins_con.any? %>
+  <h3>Contractors Risk Liability</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><%= sortable_column "Name", column: "sbcon_name" %></th>
+        <th>Contact Number</th>
+        <th>Type</th>
+        <th><%= link_to "Scotland", scotland_path %></th>
+        <th><%= link_to "NE England", ne_eng_path %></th>
+        <th><%= link_to "NW England", nw_eng_path %></th>
+        <th><%= link_to "Midlands", midlands_path %></th>
+        <th><%= link_to "SE England", se_eng_path %></th>
+        <th><%= link_to "SW England", sw_eng_path %></th>
+        <th><%= link_to "London", london_path %></th>
+        <th><%= link_to "Wales", wales_path %></th>
+        <th><%= link_to "Expiry Date", column: "exp_date_con_all" %></th>
+        <th><%= sortable_column "Operatives", column: "op_avail" %></th>
+        <th><%= sortable_column "Status", column: "approved_status" %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @sbcon_ins_emp.each do |subcontractor| %>
+      <tr>
+        <td><%= link_to subcontractor.sbcon_name, subcontractor %></td>
+        <td><%= subcontractor.con_tel_num %></td>
+        <td><%= subcontractor.sbcon_type %></td>
+        <td><%= subcontractor.scot %></td>
+        <td><%= subcontractor.ne_eng %></td>
+        <td><%= subcontractor.nw_eng %></td>
+        <td><%= subcontractor.mid %></td>
+        <td><%= subcontractor.se_eng %></td>
+        <td><%= subcontractor.sw_eng %></td>
+        <td><%= subcontractor.ldn %></td>
+        <td><%= subcontractor.wales %></td>
+        <td><%= subcontractor.exp_date_con_all.strftime('%d-%m-%y') %></td>
+        <td><%= subcontractor.op_avail %></td>
+        <td><%= subcontractor.approved_status %></td>
+        <td class="edit"><%= link_to "edit", edit_subcontractor_path(subcontractor), class: "btn btn-success btn-mini" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>

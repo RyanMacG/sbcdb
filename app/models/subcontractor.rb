@@ -4,9 +4,10 @@ class Subcontractor < ActiveRecord::Base
   :con_tel_num, :county, :country, :cr_ni_no, :cscs_card, :date_entered, :exp_date_con_all,
   :exp_date_emp, :exp_date_pub, :hr_rate_fitter, :hr_rate_other, :hs_pol, :initials,
   :ins_con_all, :ins_emp, :ins_prod, :ins_pub, :jtc_comm, :ldn, :meth_state, :mid, :ne_eng,
-  :nw_eng, :wales, :op_avail, :position, :postcode, :prov_prod, :exp_date_prod, :prov_con_all, :prov_emp, :prov_pub, :rating, :ref_con_all,
-  :ref_emp, :ref_prod, :ref_pub, :renewal_date, :risk_ass, :sbcon_name,
-  :sbcon_type, :scot, :se_eng, :signed, :signed_date, :sw_eng, :utr_no, :vat_no, :vat_reg
+  :nw_eng, :wales, :op_avail, :position, :postcode, :prov_prod, :exp_date_prod, :prov_con_all,
+  :prov_emp, :prov_pub, :rating, :ref_con_all, :ref_emp, :ref_prod, :ref_pub, :renewal_date,
+  :risk_ass, :sbcon_name, :sbcon_type, :scot, :se_eng, :signed, :signed_date, :sw_eng,
+  :utr_no, :vat_no, :vat_reg, :customer_code
 
   validates_presence_of :sbcon_name, :con_email, :address1, :city, :postcode,
   :country, :con_name, :con_tel_num, :vat_reg, :utr_no, :cr_ni_no, :cscs_card,

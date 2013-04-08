@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130110145800) do
+ActiveRecord::Schema.define(:version => 20130404100933) do
 
   create_table "subcontractors", :force => true do |t|
     t.string   "sbcon_name"
@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(:version => 20130110145800) do
     t.string   "vat_reg"
     t.string   "vat_no"
     t.string   "cscs_card"
-    t.string   "op_avail"
-    t.float    "hr_rate_fitter",   :limit => 24
-    t.float    "hr_rate_other",    :limit => 24
+    t.integer  "op_avail"
+    t.float    "hr_rate_fitter"
+    t.float    "hr_rate_other"
     t.string   "scot"
     t.string   "ne_eng"
     t.string   "nw_eng"
@@ -77,8 +77,9 @@ ActiveRecord::Schema.define(:version => 20130110145800) do
     t.string   "cis_ver_no"
     t.string   "cis_stat"
     t.string   "jtc_comm"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "customer_code"
   end
 
 end

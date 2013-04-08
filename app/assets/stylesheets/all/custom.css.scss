@@ -99,7 +99,7 @@ p {
 
 /*show*/
 .subcon td {
-  width: 150px;
+  width: auto;
   padding-right: 3px;
 }
 
@@ -121,6 +121,11 @@ p {
   &:hover {
     text-decoration: none;
   }
+}
+
+.navbar-inner .container {
+  max-width: 1000px;
+  width: auto;
 }
 
 /* sidebar */

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="field offset6">
+  <div class="field offset9">
     <%= form_for (@subcontractor) do |f| %>
       <p class="required">Required fields are marked with a *</p>
       <%= render 'shared/error_messages' %>
@@ -60,7 +60,7 @@
     </div>
     
     <h2>Areas Covered:</h2>
-    <div class="field offset6">
+    <div class="field offset9">
       <%= f.label :scot, "Scotland" %>
       <%= f.select :scot, options_for_select([["No"], ["Yes"]], @subcontractor.scot) %>
 
@@ -88,7 +88,7 @@
 
     <h2>Insurance</h2>
     <h3>Product Liability Insurance</h3>
-    <div class="field offset6">
+    <div class="field offset9">
       <%= f.label :ins_prod, "Product Liability *" %>
       <%= f.select :ins_prod, options_for_select([["No"], ["Yes"]], @subcontractor.ins_prod) %>
 
@@ -106,7 +106,7 @@
     </div>
 
     <h3>Employer Liability Insurance</h3>
-    <div class="field offset6">
+    <div class="field offset9">
       <%= f.label :ins_emp, "Employer Liability *" %>
       <%= f.select :ins_emp, options_for_select([["No"], ["Yes"]], @subcontractor.ins_emp) %>
 
@@ -124,7 +124,7 @@
     </div>
 
     <h3>Public Liability Insurance</h3>
-    <div class="field offset6">
+    <div class="field offset9">
       <%= f.label :ins_pub, "Public Liability *" %>
       <%= f.select :ins_pub, options_for_select([["No"], ["Yes"]], @subcontractor.ins_pub) %>
 
@@ -143,7 +143,7 @@
     </div>
 
     <h3>Contractors All Risk Insurance</h3>
-    <div class="field offset6">
+    <div class="field offset9">
       <%= f.label :ins_con_all, "Contractors All Risk *" %>
       <%= f.select :ins_con_all, options_for_select([["No"], ["Yes"]], @subcontractor.ins_con_all) %>
       
@@ -162,7 +162,7 @@
     </div>
 
     <h2>T&ampCs, etc.</h2>
-    <div class="field offset6">
+    <div class="field offset9">
       <%= f.label :acpt_tc, "Accept T&C *" %>
       <%= f.select :acpt_tc, options_for_select([["No"], ["Yes"]], @subcontractor.acpt_tc) %>
 
@@ -211,10 +211,13 @@
       <%= f.label :cis_stat, "CIS Status *" %>
       <%= f.select :cis_stat, options_for_select([["0.00%"], ["20.00%"]], @subcontractor.cis_stat) %>
 
+      <%= f.label :customer_code, 'Dimensions Customer Code' %>
+      <%= f.text_field :customer_code %>
+
       <%= f.label :jtc_comm, "JTC Comments" %>
       <%= f.text_area :jtc_comm %>
     </div>
 
-    <p><%= f.submit "Submit", class: "offset6 btn btn-large" %></p>
+    <p><%= f.submit "Submit", class: "offset9 btn btn-large" %></p>
   <% end %>
 </div>

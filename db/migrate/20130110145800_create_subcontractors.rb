@@ -16,7 +16,7 @@ class CreateSubcontractors < ActiveRecord::Migration
       t.string  :vat_reg
       t.string  :vat_no
       t.string  :cscs_card
-      t.string  :op_avail
+      t.integer :op_avail
       t.float   :hr_rate_fitter
       t.float   :hr_rate_other
       t.string  :scot
