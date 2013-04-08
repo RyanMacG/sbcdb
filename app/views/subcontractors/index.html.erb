@@ -4,7 +4,7 @@
 <p><%= link_to "Clear sorting", subcontractors_path, class: "btn btn-mini" %></p>
 <%= will_paginate @sbcons %>
 <%= render 'shared/subcon_total'%>
-<table class="table table-hover">
+<table class="table table-condensed table-hover">
   <thead>
     <tr>
       <th><%= sortable_column "Name", column: "sbcon_name" %></th>

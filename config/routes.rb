@@ -17,6 +17,7 @@ Sbcdb::Application.routes.draw do
   match 'labour',     to: 'subcontractors#labour'
   match 'specialist', to: 'subcontractors#specialist'
   match 'both',       to: 'subcontractors#both'
+  match 'dashboard',  to: 'subcontractors#dashboard'
 
   resources :subcontractors
 
