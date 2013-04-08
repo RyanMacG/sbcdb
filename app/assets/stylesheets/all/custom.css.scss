@@ -36,7 +36,11 @@ textarea {
 }
 
 .container {
-  width: 95%;
+  max-width: 95%;
+  .field {
+    padding-left: 320px;
+    width: 75%;
+  }
 }
 
 .required {
