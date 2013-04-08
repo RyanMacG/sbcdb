@@ -10,5 +10,8 @@ ___
 - Added Subcontractor count to index
 - Added 'Viewing subcontractor x of y' to show page
 - Removed 'Contact Number' as sortable column
+- Fixed typo that caused no subcontractors to be displayed in regional view
+- Added dashboard showing all subcontractors with insurance due to expire within a month
+- Altered index so it shouldn't overflow as badly on smaller screens
 
 ___
