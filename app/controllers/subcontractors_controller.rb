@@ -40,40 +40,47 @@ class SubcontractorsController < ApplicationController
     end
   end
 
+  def dashboard
+    @sbcon_ins_prod = Subcontractor.where("exp_date_prod <= ?", 1.month.from_now).order(columns)
+    @sbcon_ins_emp = Subcontractor.where("exp_date_emp <= ?", 1.month.from_now).order(columns)
+    @sbcon_ins_pub = Subcontractor.where("exp_date_pub <= ?", 1.month.from_now).order(columns)
+    @sbcon_ins_con = Subcontractor.where("exp_date_con_all <= ?", 1.month.from_now).order(columns)
+  end
+
   def due_for_renewal
     @sbcons = Subcontractor.where("renewal_date <= ?", 1.month.from_now).page(params[:page]).per_page(10)
   end
 
   def scottish_subcons
-    @sbcons = Subcontractor.where(scot: 'yes', approved_status: 'Approved').order(columns).page(params[:page]).per_page(10)
+    @sbcons = Subcontractor.where(scot: 'Yes', approved_status: 'Approved').order(columns).page(params[:page]).per_page(10)
   end
 
   def ne_eng
-    @sbcons = Subcontractor.where(ne_eng: 'yes', approved_status: 'Approved').order(columns).page(params[:page]).per_page(10)
+    @sbcons = Subcontractor.where(ne_eng: 'Yes', approved_status: 'Approved').order(columns).page(params[:page]).per_page(10)
   end
 
   def nw_eng
-    @sbcons = Subcontractor.where(nw_eng: 'yes', approved_status: 'Approved').order(columns).page(params[:page]).per_page(10)
+    @sbcons = Subcontractor.where(nw_eng: 'Yes', approved_status: 'Approved').order(columns).page(params[:page]).per_page(10)
   end
 
   def midlands
-    @sbcons = Subcontractor.where(mid: 'yes', approved_status: 'Approved').order(columns).page(params[:page]).per_page(10)
+    @sbcons = Subcontractor.where(mid: 'Yes', approved_status: 'Approved').order(columns).page(params[:page]).per_page(10)
   end
 
   def se_eng
-    @sbcons = Subcontractor.where(se_eng: 'yes', approved_status: 'Approved').order(columns).page(params[:page]).per_page(10)
+    @sbcons = Subcontractor.where(se_eng: 'Yes', approved_status: 'Approved').order(columns).page(params[:page]).per_page(10)
   end
 
   def sw_eng
-    @sbcons = Subcontractor.where(sw_eng: 'yes', approved_status: 'Approved').order(columns).page(params[:page])
+    @sbcons = Subcontractor.where(sw_eng: 'Yes', approved_status: 'Approved').order(columns).page(params[:page])
   end
 
   def london
-    @sbcons = Subcontractor.where(ldn: 'yes', approved_status: 'Approved').order(columns).page(params[:page]).per_page(10)
+    @sbcons = Subcontractor.where(ldn: 'Yes', approved_status: 'Approved').order(columns).page(params[:page]).per_page(10)
   end
 
   def wales
-    @sbcons = Subcontractor.where(wales: 'yes', approved_status: 'Approved').order(columns).page(params[:page]).per_page(10)
+    @sbcons = Subcontractor.where(wales: 'Yes', approved_status: 'Approved').order(columns).page(params[:page]).per_page(10)
   end
 
   def all_approved

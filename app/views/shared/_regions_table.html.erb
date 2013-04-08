@@ -2,7 +2,6 @@
   <thead>
     <tr>
       <th><%= sortable_column "Name", column: "sbcon_name" %></th>
-      <th>Contact Number</th>
       <th><%= sortable_column "CSCS", column: "cscs_card" %></th>
       <th>Subcontractor Type</th>
       <th><%= sortable_column "Operatives", column: "op_avail" %></th>
@@ -18,7 +17,7 @@
       <td><%= link_to subcontractor.sbcon_name, subcontractor %></td>
       <td><%= subcontractor.con_tel_num %></td>
       <td><%= subcontractor.cscs_card %></td>
-      <td><%= subcontractor.sbcon_typ %></td>
+      <td><%= subcontractor.sbcon_type %></td>
       <td><%= subcontractor.op_avail %></td>
       <td><%= subcontractor.ins_prod %></td>
       <td><%= subcontractor.ins_emp %></td>
