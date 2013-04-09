@@ -37,9 +37,11 @@ textarea {
 
 .container {
   max-width: 95%;
+  min-width: 940px;
+  width: auto;
   .field {
-    padding-left: 320px;
-    width: 75%;
+    padding-left: 40%;
+    width: 50%;
   }
 }
 
