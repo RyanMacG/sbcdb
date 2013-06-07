@@ -1,57 +1,46 @@
 <% provide(:title, 'All Subcontractors') %>
 <h1>Subcontractors List</h1>
-
-<p><%= link_to "Clear sorting", subcontractors_path, class: "btn btn-mini" %></p>
-<%= will_paginate @sbcons %>
-<%= render 'shared/subcon_total'%>
-<table class="table table-condensed table-hover">
+<div class="filter">
+  <%= form_tag('#', method: :get, id: "filter_form") do %>
+    <%= label_tag :sbcon_type, "Type" %>
+    <%= select_tag "filter[type]", options_for_select([[],["Labour Only"], ["Specialist"], ["Both"]]) %>
+    <%= label_tag :cscs_card, "CSCS" %>
+    <%= select_tag "filter[cscs]", options_for_select([[],["Yes"], ["No"]]) %>
+    <%= label_tag :approved_status, "Approved Status" %>
+    <%= select_tag "filter[approved]", options_for_select([[],["Approved"], ["Not Approved"]]) %> <br>
+    <%= link_to "Filter", '#', id: "filterbutton", class: "btn btn-mini" %>
+  <% end %>
+  <br>
+</div>
+<table id="subcontractors" class="table table-condensed table-hover display" data-source="<%= subcontractors_url(format: "json") %>">
   <thead>
     <tr>
-      <th><%= sortable_column "Name", column: "sbcon_name" %></th>
+      <th>Name</th>
       <th>Contact Number</th>
-      <th><%= sortable_column "CSCS", column: "cscs_card" %></th>
+      <th>CSCS</th>
       <th>Type</th>
-      <th><%= link_to "Scotland", scotland_path %></th>
-      <th><%= link_to "NE England", ne_eng_path %></th>
-      <th><%= link_to "NW England", nw_eng_path %></th>
-      <th><%= link_to "Midlands", midlands_path %></th>
-      <th><%= link_to "SE England", se_eng_path %></th>
-      <th><%= link_to "SW England", sw_eng_path %></th>
-      <th><%= link_to "London", london_path %></th>
-      <th><%= link_to "Wales", wales_path %></th>
-      <th><%= sortable_column "Operatives", column: "op_avail" %></th>
-      <th><%= sortable_column "Product Liability", column: "ins_prod" %></th>
-      <th><%= sortable_column "Employer Liability", column: "ins_emp" %></th>
-      <th><%= sortable_column "Public Liability", column: "ins_pub" %></th>
-      <th><%= sortable_column "Contractors All Risk", column: "ins_con_all" %></th>
-      <th><%= sortable_column "Status", column: "approved_status" %></th>
+      <th>Scotland</th>
+      <th>NE England</th>
+      <th>NW England</th>
+      <th>Midlands</th>
+      <th>SE England</th>
+      <th>SW England</th>
+      <th>London</th>
+      <th>Wales</th>
+      <th>Operatives</th>
+      <th>Product Liability</th>
+      <th>Employer Liability</th>
+      <th>Public Liability</th>
+      <th>Contractors All Risk</th>
+      <th>Status</th>
     </tr>
   </thead>
   <tbody>
-  <% @sbcons.each do |subcontractor| %>
-    <tr>
-      <td><%= link_to subcontractor.sbcon_name, subcontractor %></td>
-      <td><%= subcontractor.con_tel_num %></td>
-      <td><%= subcontractor.cscs_card %></td>
-      <td><%= subcontractor.sbcon_type %></td>
-      <td><%= subcontractor.scot %></td>
-      <td><%= subcontractor.ne_eng %></td>
-      <td><%= subcontractor.nw_eng %></td>
-      <td><%= subcontractor.mid %></td>
-      <td><%= subcontractor.se_eng %></td>
-      <td><%= subcontractor.sw_eng %></td>
-      <td><%= subcontractor.ldn %></td>
-      <td><%= subcontractor.wales %></td>
-      <td><%= subcontractor.op_avail %></td>
-      <td><%= subcontractor.ins_prod %></td>
-      <td><%= subcontractor.ins_emp %></td>
-      <td><%= subcontractor.ins_pub %></td>
-      <td><%= subcontractor.ins_con_all %></td>
-      <td><%= subcontractor.approved_status %></td>
-      <td class="edit"><%= link_to "edit", edit_subcontractor_path(subcontractor), class: "btn btn-success btn-mini" %></td>
-    </tr>
-  <% end %>
   </tbody>
 </table>
 
-<%= will_paginate @sbcons %>
+<%= javascript_tag do %> 
+  $('#filterbutton').click(function (){
+    $('#subcontractors').dataTable().fnDraw();
+  });
+<% end %>
