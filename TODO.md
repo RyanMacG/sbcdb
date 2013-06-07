@@ -3,8 +3,8 @@
 v1.3.3
 
 - Multi-filter for appropriate columns
-- Dashboard to have British date format
-- Email report should be alphabetically sorted
+- ~~Dashboard to have British date format~~
+- ~~Email report should be alphabetically sorted~~
 
 ___
 

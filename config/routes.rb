@@ -1,6 +1,7 @@
 Sbcdb::Application.routes.draw do
 
   root to: 'subcontractors#due_for_renewal'
+  resources :subcontractors
 
   match 'help',       to: 'static_pages#help'
   match 'new',        to: 'subcontractors#new'
@@ -18,8 +19,6 @@ Sbcdb::Application.routes.draw do
   match 'specialist', to: 'subcontractors#specialist'
   match 'both',       to: 'subcontractors#both'
   match 'dashboard',  to: 'subcontractors#dashboard'
-
-  resources :subcontractors
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

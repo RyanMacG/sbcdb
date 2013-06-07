@@ -1,4 +1,5 @@
 class SubcontractorsController < ApplicationController
+  require 'pry'
   handles_sortable_columns do |conf|
     conf.sort_param = "s"
     conf.page_param = "p"
@@ -23,7 +24,12 @@ class SubcontractorsController < ApplicationController
   end
 
   def index
-    @sbcons = Subcontractor.order(columns).paginate(page: params[:page]).per_page(10)
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: SubcontractorsDatatable.new(view_context, @subcontractors)
+      end
+    end
   end
 
   def edit
