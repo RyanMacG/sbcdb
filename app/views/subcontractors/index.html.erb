@@ -1,17 +1,23 @@
 <% provide(:title, 'All Subcontractors') %>
 <h1>Subcontractors List</h1>
-<div class="filter">
   <%= form_tag('#', method: :get, id: "filter_form") do %>
-    <%= label_tag :sbcon_type, "Type" %>
-    <%= select_tag "filter[type]", options_for_select([[],["Labour Only"], ["Specialist"], ["Both"]]) %>
-    <%= label_tag :cscs_card, "CSCS" %>
-    <%= select_tag "filter[cscs]", options_for_select([[],["Yes"], ["No"]]) %>
-    <%= label_tag :approved_status, "Approved Status" %>
-    <%= select_tag "filter[approved]", options_for_select([[],["Approved"], ["Not Approved"]]) %> <br>
-    <%= link_to "Filter", '#', id: "filterbutton", class: "btn btn-mini" %>
+    <div class="row-fluid">
+      <div class="span2">
+        <%= label_tag :sbcon_type, "Type" %>
+        <%= select_tag "filter[type]", options_for_select([[],["Labour Only"], ["Specialist"], ["Both"]]) %>
+      </div>
+      <div class="span2">
+        <%= label_tag :cscs_card, "CSCS" %>
+        <%= select_tag "filter[cscs]", options_for_select([[],["Yes"], ["No"]]) %>
+      </div>
+      <div class="span2">
+        <%= label_tag :approved_status, "Approved Status" %>
+        <%= select_tag "filter[approved]", options_for_select([[],["Approved"], ["Not Approved"]]) %>
+      </div>
+    </div>
+      <%= link_to "Filter", '#', id: "filterbutton", class: "btn btn-mini" %>
   <% end %>
   <br>
-</div>
 <table id="subcontractors" class="table table-condensed table-hover display" data-source="<%= subcontractors_url(format: "json") %>">
   <thead>
     <tr>
