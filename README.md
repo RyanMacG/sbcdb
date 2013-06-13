@@ -6,7 +6,7 @@ ___
 
 ###Setup
 
-SBCDB is set up to use environment variables for anything specific to your settings to make these work. Create a defaults.rb in the config/initializers directory
+SBCDB is set up to use environment variables for anything specific to your settings to make these work. There is an example defaults file and it is deployed as part of the capistrano setup stage.
 
     ENV["comp_logo"] = "comp_logo" #whatever you want the logo to display as in the header
     ENV["comp_title"] = "title" #whatever title you want to be displayed before the pipe character
