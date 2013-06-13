@@ -2,6 +2,8 @@
 
 A web application to handle the input of subcontractor questionnaires. I know this is an edge case situation but if you can make it work for your situation feel free to submit pull requests and patches.
 
+
+Distributed under the MIT license.
 ___
 
 ###Setup
