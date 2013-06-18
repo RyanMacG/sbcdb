@@ -14,8 +14,42 @@
         <%= label_tag :approved_status, "Approved Status" %>
         <%= select_tag "filter[approved]", options_for_select([[],["Approved"], ["Not Approved"]]) %>
       </div>
+      <div class="span2">
+        <%= label_tag :scot, "Scotland" %>
+        <%= select_tag "filter[scotland]", options_for_select([[],["Yes"],["No"]]) %>
+      </div>
+      <div class="span2">
+        <%= label_tag :ne_eng, "NE England" %>
+        <%= select_tag "filter[ne_england]", options_for_select([[],["Yes"],["No"]]) %>
+      </div>
+      <div class="span2">
+        <%= label_tag :nw_eng, "NW England" %>
+        <%= select_tag "filter[nw_england]", options_for_select([[],["Yes"],["No"]]) %>
+      </div>
     </div>
-      <%= link_to "Filter", '#', id: "filterbutton", class: "btn btn-mini" %>
+    <div class="row-fluid">
+      <div class="span2">
+        <%= label_tag :mid, "Midlands" %>
+        <%= select_tag "filter[midland]", options_for_select([[],["Yes"],["No"]]) %>
+      </div>
+      <div class="span2">
+        <%= label_tag :se_eng, "SE England" %>
+        <%= select_tag "filter[se_england]", options_for_select([[],["Yes"],["No"]]) %>
+      </div>
+      <div class="span2">
+        <%= label_tag :sw_eng, "SW England" %>
+        <%= select_tag "filter[sw_england]", options_for_select([[],["Yes"],["No"]]) %>
+      </div>
+      <div class="span2">
+        <%= label_tag :ldn, "London" %>
+        <%= select_tag "filter[london]", options_for_select([[],["Yes"],["No"]]) %>
+      </div>
+      <div class="span2">
+        <%= label_tag :wales, "Wales" %>
+        <%= select_tag "filter[wales_filter]", options_for_select([[],["Yes"],["No"]]) %>
+      </div>
+    </div>
+      <%= link_to "Filter", '#', id: "filterbutton", class: "btn btn-mini" %> <%= link_to "Clear Filters", subcontractors_path, class: "btn btn-mini btn-danger" %>
   <% end %>
   <br>
 <table id="subcontractors" class="table table-condensed table-hover display" data-source="<%= subcontractors_url(format: "json") %>">

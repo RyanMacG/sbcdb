@@ -54,6 +54,14 @@ private
       subcontractors = subcontractors.where(sbcon_type: filters[:type]) unless filters[:type].blank?
       subcontractors = subcontractors.where(cscs_card: filters[:cscs]) unless filters[:cscs].blank?
       subcontractors = subcontractors.where(approved_status: filters[:approved]) unless filters[:approved].blank?
+      subcontractors = subcontractors.where(scot: filters[:scotland]) unless filters[:scotland].blank?
+      subcontractors = subcontractors.where(ne_eng: filters[:ne_england]) unless filters[:ne_england].blank?
+      subcontractors = subcontractors.where(nw_eng: filters[:nw_england]) unless filters[:nw_england].blank?
+      subcontractors = subcontractors.where(se_eng: filters[:se_england]) unless filters[:se_england].blank?
+      subcontractors = subcontractors.where(sw_eng: filters[:sw_england]) unless filters[:sw_england].blank?
+      subcontractors = subcontractors.where(mid: filters[:midland]) unless filters[:midland].blank?
+      subcontractors = subcontractors.where(wales: filters[:wales_filter]) unless filters[:wales_filter].blank?
+      subcontractors = subcontractors.where(ldn: filters[:london]) unless filters[:london].blank?
     end
     subcontractors
   end
