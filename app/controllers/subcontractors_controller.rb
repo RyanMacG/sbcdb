@@ -1,5 +1,4 @@
 class SubcontractorsController < ApplicationController
-  require 'pry'
   handles_sortable_columns do |conf|
     conf.sort_param = "s"
     conf.page_param = "p"
