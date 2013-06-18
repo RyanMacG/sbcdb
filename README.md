@@ -4,6 +4,9 @@ A web application to handle the input of subcontractor questionnaires. I know th
 
 
 Distributed under the MIT license.
+
+Uses [blueprint.css](http://www.blueprintcss.org/) for print.css
+Uses [bootstrap](http://twitter.github.io/bootstrap/) for UI
 ___
 
 ###Setup
