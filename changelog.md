@@ -1,4 +1,10 @@
 ##Changelog
+
+###v1.3.3
+- Changed to using jquery-datatables for the index
+- Cleaned up the layout
+- Got multi-filters working
+- Added regional filters
 ___
 
 ###v1.3.1

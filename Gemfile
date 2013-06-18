@@ -14,9 +14,8 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 end
-
-gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -26,6 +25,10 @@ group :development, :test do
   gem 'annotate', '~> 2.4.1.beta'
   gem 'pg'
   gem 'meta_request'
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'pry-stack_explorer'
+  gem 'pry-debugger'
 end
 
 group :test do
