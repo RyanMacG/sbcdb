@@ -7,7 +7,7 @@ v1.3.3
 - ~~Dashboard to have British date format~~
 - ~~Email report should be alphabetically sorted~~
 - ~~remove company specific details to make project more adaptable~~
-- ~~Add regional filters'
+- ~~Add regional filters~~
 ___
 
 v1.3
